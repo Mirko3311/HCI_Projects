@@ -60,7 +60,7 @@ Ako su korisničko ime ili lozinka pogrešni, ispisaće se povratni prozor koji 
 
 
 
-![Greška prilikom unosa kredencijala](Screenshot/ErrorLogIn.JPG)
+![Greška prilikom unosa kredencijala](Screenshot/ErrorLogIn.png)
 
 
 ### Izbor jezika aplikacije
@@ -86,7 +86,7 @@ Aplikacija omogućava korisnicima da na početnom ekranu odaberu željeni jezik 
 
 Dugmad za izbor jezika nalaze se u **donjem desnom uglu početnog ekrana**, omogućavajući jednostavan i intuitivan odabir jezika.
 
- ![Izbor jezika](Screenshot/Language.JPG)
+ ![Izbor jezika](Screenshot/ChangeLanguage.png)
 
 
 
@@ -95,7 +95,7 @@ Dugmad za izbor jezika nalaze se u **donjem desnom uglu početnog ekrana**, omog
 Kada se korisnik uspješno prijavi, otvoriće mu se odgovarajući prozor, u zavisnosti tipa korisnika. Prijavljeni korisnik će sa lijeve strane imati MenuBar.
 Svaki korisnik moze da promijeni temu, tako što se u MenuBar, sa lijeve strane, desnim klikom pritisne na ikonicu za promijenu teme.
 
-![Change Theme](Screenshot/ChangeTheme.JPG)
+![Change Theme](Screenshot/ChangeBackground.png)
 
 Otvori će se meni sa temama, tako da korisnik može da izabere između plave, crvene ili zelene teme. Kod svih korisnika, osim administratora, kada izaberu temu pamtiće se izbor tema, tako da prilikom sljedeće prijave aplikacija se pokreće sa posljednjim sačuvanim  izborom teme.
 Kod administratora podrazumijevana tema je plava.
@@ -114,7 +114,7 @@ Administrator aplikacije ima mogućnost upravljanja entitetima ( dodavanje, bris
 
 Kada se administrator unosom kredencijala prijavi, otvara se administratorski prozor.
 
-![Administratorski prozor](Screenshot/Admin.JPG)
+![Administratorski prozor](Screenshot/AdminPage.png)
 
 ### Glavne funkcionalnosti:
 
@@ -174,7 +174,7 @@ Nakon što administrator izabere odgovarajući entitet, na ekranu će se prikaza
 
 Na primer, ako administrator izabere "Profesor", prikazaće se lista svih profesora. Administrator može da selektuje profesora kojeg želi da obriše, nakon čega treba da pritisne ikonu "Delete".
 
-![Select Entity for Delete](Screenshot/DeleteProfessor.JPG)
+![Select Entity for Delete](Screenshot/DeletePage.png)
 
 ### Ažuriranje
 
@@ -189,7 +189,7 @@ Postoje dva ComBox. U prvom ComBox-u  se bira koji entitet želi da ažurira.
 
  Nakon što izabere entitet koji želi da ažurira, prikazuje se forma sa poljima za ažuriranje.
 
-![Update Form](Screenshot/UpdateProfessor.JPG)
+![Update Form](Screenshot/UpdateProfessor.png)
 
  Administrator treba da izabere konkretan entitet koji želi da ažurira. Nakon što selektuje entitet kojeg želi da ažurira, popunjava se forma za ažuriranje podacima 
 izabranog entiteta.
