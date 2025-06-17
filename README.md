@@ -212,7 +212,7 @@ Kartica **"Dodijeli kurs"** omogućava administratoru da dodijeli predmet profes
 
 Nakon što administrator odabere odgovarajuće opcije, klikom na dugme **"Dodijeli kurs"**, profesor se zadužuje za predmet.
 
-![Zaduzi profesora na kurs](Screenshot/ProfessorCourse.JPG)
+![Zaduzi profesora na kurs](Screenshot/AssignProfessor.JPG)
 
 #### Razduži
 
@@ -230,12 +230,12 @@ Nakon što su opcije izabrane, klikom na dugme **"Razduži"**, profesor se razdu
 - Dodavanje domaćih zadataka
 - Unos ocjena
 
-![Razduzi profesora sa kursa](Screenshot/offCourse.JPG)
+![Razduzi profesora sa kursa](Screenshot/UnassignProfessor.png)
 Samo profesor koji je zadužen za predmet ima mogućnost pristupa ovim funkcijama.
 
-### Opcija Undo i Logout
+### Opcija  Logout
 
-U MenuBar, na samom vrhu, je ikonica za **Undo**, kojom se poništavaju prethodne akcije.
+
 Na samom dnu MenuBar-a je ikonica za **LogOut**. Kada korisnik dvoklikne na tu ikonicu odjaviće se se.
 
 
@@ -247,7 +247,7 @@ Kada se profesor uspješno prijavi, otvara mu se prozor, tako da u vrhu postoje 
 3. **Prisustvo**
 4. **Ocjene**
 
-![Profesori](Screenshot/ProfessorJPG.JPG)
+![Profesori](Screenshot/ProfessorPage.png)
 
 ### Predmeti
 
@@ -308,7 +308,7 @@ Evidencija prisustva obavlja se kroz sledeće korake:
 4. **Čuvanje evidencije**:  
    Nakon što je prisustvo svih studenata evidentirano, profesor pritisne dugme **"Sačuvaj"**, čime se podaci o prisustvu memorišu.
 
-![Evidencija prisustva](Screenshot/AddAttendance.JPG)
+![Evidencija prisustva](Screenshot/AddAttendance.png)
 
 ### Napomena:
 - Lista predmeta i studenata dinamički se generiše na osnovu trenutnih podataka o zaduženjima profesora i upisima studenata.
@@ -409,9 +409,8 @@ Pregled ocjena omogućava profesoru da na jednostavan način pristupi ocjenama s
 **Napomena**: Ova funkcionalnost omogućava profesorima da brzo i efikasno pregledaju ocjene svojih studenata za specifične predmete. Sve promjene u selektovanim studentima i predmetima odmah se odražavaju u tabeli, pružajući tako interaktivan i pregledan način za praćenje ocjena.
 
 
-### Opcija Undo i Logout
+### OpcijaLogout
 
-U MenuBar, na samom vrhu, je ikonica za **Undo**, kojom se poništavaju prethodne akcije.
 Na samom dnu MenuBar-a je ikonica za **LogOut**. Kada korisnik dvoklikne na tu ikonicu odjaviće se se.
 
 
@@ -431,7 +430,7 @@ U tabu **Pregled Prisustva**, student može pregledati evidenciju svojih prisust
   - **Informacija** o tome da li je student prisustvovao tim predavanjima.
 
 <div align="center">
-  <img src="Screenshot/StudentAttendance.JPG" alt="Studentski pregled prisustva" width="800">
+  <img src="Screenshot/PreviewAttendanceStudent.png" alt="Studentski pregled prisustva" width="800">
 </div>
 
 ####  Domaći zadaci
@@ -443,9 +442,12 @@ U tabu **Pregled Prisustva**, student može pregledati evidenciju svojih prisust
 
 
 <div align="center">
-  <img src="Screenshot/HomeworkStudent.JPG" alt="Domaci zadatak" width="800">
+  <img src="Screenshot/StudentTask.png" alt="Domaci zadatak" width="800">
 </div>
-
+- Klikom na zadatak student može da vidi detaljnije informacije o zadatku.
+<div align="center">
+  <img src="Screenshot/PreviewTaskStudent.png" alt="Domaci zadatak" width="800">
+</div>
 
 
 ####  Ispiti
@@ -458,12 +460,12 @@ U tabu **Pregled Prisustva**, student može pregledati evidenciju svojih prisust
   3. **Krajnju ocjenu** iz predmeta.
 
 <div align="center">
-  <img src="Screenshot/Exam.JPG" alt="Ispiti" width="800">
+  <img src="Screenshot/StudentExam.png" alt="Ispiti" width="800">
 </div>
 
 
-### Opcija Undo i Logout
+### Opcija  Logout
 
-U MenuBar, na samom vrhu, je ikonica za **Undo**, kojom se poništavaju prethodne akcije.
+
 Na samom dnu MenuBar-a je ikonica za **LogOut**. Kada korisnik dvoklikne na tu ikonicu odjaviće se se ili prečicom CTR+L.
 
