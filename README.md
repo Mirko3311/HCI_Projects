@@ -52,7 +52,7 @@ za kreiranje naloga. Korisnici moraju da pamte svoje kredencijale.
 Prilikom otvaranja aplikacije korisniku se pojavljuje početni ekran u kojem unosi svoje korisničko ime i svoju lozinku. Kada korisnik unese kredencijale, pritisne dugme Prijava/LogIn. S obzirom da postoje tri tipa korisničkih naloga (student, profesor, administrator), 
 prvo se provjerava da li su korisničko ime i lozinka validni. Ako su validni, otvara se odgovarajući prozor u zavisnosti od tipa korisničkog naloga. Prozori će korisnicima omogućiti neophodne interakcije.
 
-![Početni ekran](Screenshot/LogIn.JPG)
+![Početni ekran](Screenshot/LogInPage.png)
 
 
 
