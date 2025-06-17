@@ -60,7 +60,7 @@ Ako su korisničko ime ili lozinka pogrešni, ispisaće se povratni prozor koji 
 
 
 
-![Greška prilikom unosa kredencijala](Screenshot/ErrorLogIn.JPG)
+![Greška prilikom unosa kredencijala](Screenshot/ErrorLogIn.png)
 
 
 ### Izbor jezika aplikacije
@@ -86,7 +86,7 @@ Aplikacija omogućava korisnicima da na početnom ekranu odaberu željeni jezik 
 
 Dugmad za izbor jezika nalaze se u **donjem desnom uglu početnog ekrana**, omogućavajući jednostavan i intuitivan odabir jezika.
 
- ![Izbor jezika](Screenshot/Language.JPG)
+ ![Izbor jezika](Screenshot/ChangeLanguage.png)
 
 
 
@@ -95,7 +95,7 @@ Dugmad za izbor jezika nalaze se u **donjem desnom uglu početnog ekrana**, omog
 Kada se korisnik uspješno prijavi, otvoriće mu se odgovarajući prozor, u zavisnosti tipa korisnika. Prijavljeni korisnik će sa lijeve strane imati MenuBar.
 Svaki korisnik moze da promijeni temu, tako što se u MenuBar, sa lijeve strane, desnim klikom pritisne na ikonicu za promijenu teme.
 
-![Change Theme](Screenshot/ChangeTheme.JPG)
+![Change Theme](Screenshot/ChangeBackground.png)
 
 Otvori će se meni sa temama, tako da korisnik može da izabere između plave, crvene ili zelene teme. Kod svih korisnika, osim administratora, kada izaberu temu pamtiće se izbor tema, tako da prilikom sljedeće prijave aplikacija se pokreće sa posljednjim sačuvanim  izborom teme.
 Kod administratora podrazumijevana tema je plava.
@@ -114,7 +114,7 @@ Administrator aplikacije ima mogućnost upravljanja entitetima ( dodavanje, bris
 
 Kada se administrator unosom kredencijala prijavi, otvara se administratorski prozor.
 
-![Administratorski prozor](Screenshot/Admin.JPG)
+![Administratorski prozor](Screenshot/AdminPage.png)
 
 ### Glavne funkcionalnosti:
 
@@ -174,7 +174,7 @@ Nakon što administrator izabere odgovarajući entitet, na ekranu će se prikaza
 
 Na primer, ako administrator izabere "Profesor", prikazaće se lista svih profesora. Administrator može da selektuje profesora kojeg želi da obriše, nakon čega treba da pritisne ikonu "Delete".
 
-![Select Entity for Delete](Screenshot/DeleteProfessor.JPG)
+![Select Entity for Delete](Screenshot/DeletePage.png)
 
 ### Ažuriranje
 
@@ -189,7 +189,7 @@ Postoje dva ComBox. U prvom ComBox-u  se bira koji entitet želi da ažurira.
 
  Nakon što izabere entitet koji želi da ažurira, prikazuje se forma sa poljima za ažuriranje.
 
-![Update Form](Screenshot/UpdateProfessor.JPG)
+![Update Form](Screenshot/UpdateProfessor.png)
 
  Administrator treba da izabere konkretan entitet koji želi da ažurira. Nakon što selektuje entitet kojeg želi da ažurira, popunjava se forma za ažuriranje podacima 
 izabranog entiteta.
@@ -212,7 +212,7 @@ Kartica **"Dodijeli kurs"** omogućava administratoru da dodijeli predmet profes
 
 Nakon što administrator odabere odgovarajuće opcije, klikom na dugme **"Dodijeli kurs"**, profesor se zadužuje za predmet.
 
-![Zaduzi profesora na kurs](Screenshot/ProfessorCourse.JPG)
+![Zaduzi profesora na kurs](Screenshot/AssignProfessor.JPG)
 
 #### Razduži
 
@@ -230,12 +230,12 @@ Nakon što su opcije izabrane, klikom na dugme **"Razduži"**, profesor se razdu
 - Dodavanje domaćih zadataka
 - Unos ocjena
 
-![Razduzi profesora sa kursa](Screenshot/offCourse.JPG)
+![Razduzi profesora sa kursa](Screenshot/UnassignProfessor.png)
 Samo profesor koji je zadužen za predmet ima mogućnost pristupa ovim funkcijama.
 
-### Opcija Undo i Logout
+### Opcija  Logout
 
-U MenuBar, na samom vrhu, je ikonica za **Undo**, kojom se poništavaju prethodne akcije.
+
 Na samom dnu MenuBar-a je ikonica za **LogOut**. Kada korisnik dvoklikne na tu ikonicu odjaviće se se.
 
 
@@ -247,7 +247,7 @@ Kada se profesor uspješno prijavi, otvara mu se prozor, tako da u vrhu postoje 
 3. **Prisustvo**
 4. **Ocjene**
 
-![Profesori](Screenshot/ProfessorJPG.JPG)
+![Profesori](Screenshot/ProfessorPage.png)
 
 ### Predmeti
 
@@ -308,7 +308,7 @@ Evidencija prisustva obavlja se kroz sledeće korake:
 4. **Čuvanje evidencije**:  
    Nakon što je prisustvo svih studenata evidentirano, profesor pritisne dugme **"Sačuvaj"**, čime se podaci o prisustvu memorišu.
 
-![Evidencija prisustva](Screenshot/AddAttendance.JPG)
+![Evidencija prisustva](Screenshot/AddAttendance.png)
 
 ### Napomena:
 - Lista predmeta i studenata dinamički se generiše na osnovu trenutnih podataka o zaduženjima profesora i upisima studenata.
@@ -409,9 +409,8 @@ Pregled ocjena omogućava profesoru da na jednostavan način pristupi ocjenama s
 **Napomena**: Ova funkcionalnost omogućava profesorima da brzo i efikasno pregledaju ocjene svojih studenata za specifične predmete. Sve promjene u selektovanim studentima i predmetima odmah se odražavaju u tabeli, pružajući tako interaktivan i pregledan način za praćenje ocjena.
 
 
-### Opcija Undo i Logout
+### OpcijaLogout
 
-U MenuBar, na samom vrhu, je ikonica za **Undo**, kojom se poništavaju prethodne akcije.
 Na samom dnu MenuBar-a je ikonica za **LogOut**. Kada korisnik dvoklikne na tu ikonicu odjaviće se se.
 
 
@@ -431,7 +430,7 @@ U tabu **Pregled Prisustva**, student može pregledati evidenciju svojih prisust
   - **Informacija** o tome da li je student prisustvovao tim predavanjima.
 
 <div align="center">
-  <img src="Screenshot/StudentAttendance.JPG" alt="Studentski pregled prisustva" width="800">
+  <img src="Screenshot/PreviewAttendanceStudent.png" alt="Studentski pregled prisustva" width="800">
 </div>
 
 ####  Domaći zadaci
@@ -443,9 +442,12 @@ U tabu **Pregled Prisustva**, student može pregledati evidenciju svojih prisust
 
 
 <div align="center">
-  <img src="Screenshot/HomeworkStudent.JPG" alt="Domaci zadatak" width="800">
+  <img src="Screenshot/StudentTask.png" alt="Domaci zadatak" width="800">
 </div>
-
+- Klikom na zadatak student može da vidi detaljnije informacije o zadatku.
+<div align="center">
+  <img src="Screenshot/PreviewTaskStudent.png" alt="Domaci zadatak" width="800">
+</div>
 
 
 ####  Ispiti
@@ -458,12 +460,12 @@ U tabu **Pregled Prisustva**, student može pregledati evidenciju svojih prisust
   3. **Krajnju ocjenu** iz predmeta.
 
 <div align="center">
-  <img src="Screenshot/Exam.JPG" alt="Ispiti" width="800">
+  <img src="Screenshot/StudentExam.png" alt="Ispiti" width="800">
 </div>
 
 
-### Opcija Undo i Logout
+### Opcija  Logout
 
-U MenuBar, na samom vrhu, je ikonica za **Undo**, kojom se poništavaju prethodne akcije.
+
 Na samom dnu MenuBar-a je ikonica za **LogOut**. Kada korisnik dvoklikne na tu ikonicu odjaviće se se ili prečicom CTR+L.
 
