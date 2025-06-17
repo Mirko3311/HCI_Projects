@@ -103,8 +103,8 @@ Teme se razlikuju po pozadini, fontu slova, boji slova, dizajnu dugmadi.
 Primjer izgleda dvije teme za interfejs profesora (crvene i zelene), dok će se treća tema (plava) koristiti u ovom dokumentu.
 
 <div style="display: flex; justify-content: space-between;">
-  <img src="Screenshot/GreenTheme.JPG" alt="Tema 1" width="520"/>
-  <img src="Screenshot/RedTheme.JPG" alt="Tema 2" width="520"/>
+  <img src="Screenshot/GreenTheme.png" alt="Tema 1" width="520"/>
+  <img src="Screenshot/RedTheme.png" alt="Tema 2" width="520"/>
 </div>
 
 ## Funkcionalnosti administratora
@@ -150,7 +150,7 @@ U zavisnosti od izabranog entiteta, otvara se forma za unos podataka. Ako admini
  Prilikom unosa, ukoliko želi da prekine unos i izbriše sve unijeti podatke u polja može da pritisne dugme za **"Cancel"**, te na taj način da očite polja.
  Na isti način, koristeći **"Cancel**, može da očisti i polja za **Studenta** i **Predmet**.
 
-!["Cancel"](Screenshot/Cancel.JPG)
+!["Cancel"](Screenshot/CancelCommand.png)
 
 Dodavanje **Studenta** i **Predmeta** će imati svoje forme.
 
@@ -185,7 +185,7 @@ Nakon toga, prikazuje se okruženje za ažuriranje.
 
 Postoje dva ComBox. U prvom ComBox-u  se bira koji entitet želi da ažurira.
 
-![Combox Entity](Screenshot/UpdateEntity.JPG)
+![Combox Entity](Screenshot/ComboxEntity.JPG)
 
  Nakon što izabere entitet koji želi da ažurira, prikazuje se forma sa poljima za ažuriranje.
 
