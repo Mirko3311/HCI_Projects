@@ -155,8 +155,8 @@ U zavisnosti od izabranog entiteta, otvara se forma za unos podataka. Ako admini
 Dodavanje **Studenta** i **Predmeta** će imati svoje forme.
 
 <div style="display: flex; justify-content: space-between;">
-  <img src="Screenshot/StudentForm.JPG" alt="Slika 1" width="480"/>
-  <img src="Screenshot/SubjectForm.JPG" alt="Slika 2" width="460"/>
+  <img src="Screenshot/AddStudent.png" alt="Slika 1" width="480"/>
+  <img src="Screenshot/AddSubject.png" alt="Slika 2" width="460"/>
 </div>
 
 Sva polja prilikom dodavanja moraju biti popunjena, u suprotnom će korisnik dobiti povratnu informaciju da postoje prazna polja.
@@ -268,7 +268,7 @@ Profesor u tabu **Domaći zadaci** ima dva podtaba, jedan za dodavanje novog dom
 Profesor popunjava sva neophodna polja za domaći zadatak. Sva polja moraju da budu popunjena. Sva polja podržavaju stringove, osim polja **Maksimalan broj bodova**, koji podržava cjelobrojne vrijednosti.
 Ukoliko sva polja nisu popunjena, korisnik će dobiti povratnu informaciju.
 
-![Prazna polja](Screenshot/EmptyField.JPG)
+![Prazna polja](Screenshot/EmptyFieldPTask.JPG)
 
 Profesor može da doda domaći zadatak samo predmetima koje predaje. Isto tako, samo studenti koji slušaju predmete mogu da pregledaju domaće zadatke. 
 Kada se ** popune sva polja **, profesor pritiskom na dugme **"Dodaj"** pamti domaći zadatak. 
@@ -328,7 +328,7 @@ Funkcionalnost **Pregleda prisustva** omogućava profesorima ili administratorim
    - Nakon selekcije studenta i predmeta, tabela ispod se popunjava informacijama o prisustvu studenta za taj predmet.  
    - Ukoliko za odabranog studenta na selektovanom predmetu ne postoji evidentirano prisustvo, prikazuje se obaveštenje: **"Nema evidentiranog prisustva za izabranog studenta na selektovanom predmetu."**
 
-![Pregled prisustva](Screenshot/ViewAttendance.JPG)
+![Pregled prisustva](Screenshot/PreviewAttendanceProfessor.png)
 
 Ova funkcionalnost pruža brz i jasan uvid u evidenciju prisustva studenata na odabranim predmetima.
 
@@ -361,7 +361,7 @@ Funkcionalnost unosa ocjena dostupna je u tabu **"Ocjene"** i realizuje se na sl
 
 
 <div align="center">
-  <img src="Screenshot/EntryGrade.JPG" alt="Nevalidan unos podataka" width="500">
+  <img src="Screenshot/EmptyFieldGrade.png" alt="Nevalidan unos podataka" width="500">
 </div>
 
 
