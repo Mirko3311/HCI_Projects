@@ -1,0 +1,769 @@
+﻿<Window x:Class="ASystem.ProfessorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+       xmlns:local="clr-namespace:ASystem"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+       xmlns:resources="clr-namespace:PrviProjektniZadatakHCI.Resources;assembly=PrviProjektniZadatakHCI" xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        WindowState="Maximized"
+        Icon="pack://application:,,,/Images/professorIcon.ico"
+     Title="{DynamicResource  ProfessorText}">
+
+    <Window.InputBindings>
+        <KeyBinding Command="{DynamicResource LogoutCommand}" Gesture="Ctrl+L" />
+    </Window.InputBindings>
+
+    <Window.Resources>
+        <Style x:Key="WrapStyle" TargetType="TextBlock">
+            <Setter Property="TextWrapping" Value="Wrap"/>
+        </Style>
+    </Window.Resources>
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.Background>
+                <DynamicResource ResourceKey="Backdrop" />
+            </Grid.Background>
+
+            <Border Grid.Column="0" 
+        VerticalAlignment="Stretch" 
+        CornerRadius="20" 
+        Opacity="0.7" 
+        Background="#FFFFFF" 
+        Margin="10">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Row="0" Orientation="Vertical" Margin="10,20,0,0">
+                   
+                        <Border Background="AntiqueWhite" Height="59" VerticalAlignment="Top" Margin="0,0,0,10">
+                            <DockPanel>
+                                <Border Width="47" Height="80" Padding="0" Background="White" CornerRadius="95" DockPanel.Dock="Top">
+                                    <Ellipse Margin="-2,0,0,21" Height="59" VerticalAlignment="Bottom">
+                                        <Ellipse.Fill>
+                                            <ImageBrush ImageSource="pack://application:,,,/Images/professorIcon.ico"/>
+                                        </Ellipse.Fill>
+                                    </Ellipse>
+                                </Border>
+                            </DockPanel>
+                        </Border>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="2" Orientation="Vertical" Margin="10,0,10,20">
+                        <Button Command="{Binding ChangePasswordCommand}" Style="{DynamicResource topButton}" Width="41" Height="41" Margin="0,10,0,0">
+                            <Icon:PackIconMaterial Kind="Key" Width="30" Height="41" ToolTip="Password"/>
+                        </Button>
+                        <Button Style="{DynamicResource topButton}" Width="41" Height="41" Margin="0,10,0,0">
+                            <Icon:PackIconMaterial Kind="Translate" ToolTip="Promjena jezika" Foreground="Black" Width="35" Height="35"/>
+                            <Button.ContextMenu>
+                                <ContextMenu>
+                                    <MenuItem Header="{DynamicResource English}" Command="{Binding ChangeToEnglishCommand}" CommandParameter="en"/>
+                                    <MenuItem Header="{DynamicResource Serbian}" Command="{Binding ChangeToSerbianCommand}" CommandParameter="sr"/>
+                                </ContextMenu>
+                            </Button.ContextMenu>
+                        </Button>
+                        <Button Style="{DynamicResource topButton}" Width="41" Height="40" Margin="0,10,0,0">
+                            <Icon:PackIconMaterial Kind="ThemeLightDark" ToolTip="Promjena teme" Width="23" Height="31"/>
+                            <Button.ContextMenu>
+                                <ContextMenu>
+                                    <MenuItem Header="{DynamicResource BlueText}" Command="{Binding LightThemeCommand}"/>
+                                    <MenuItem Header="{DynamicResource RedText}" Command="{Binding DarkThemeCommand}"/>
+                                    <MenuItem Header="{DynamicResource GreenText}" Command="{Binding GreenThemeCommand}"/>
+                                </ContextMenu>
+                            </Button.ContextMenu>
+                        </Button>
+                        <Button Command="{Binding LogOutCommand}" Style="{DynamicResource topButton}" Width="41" Height="40" Margin="0,10,0,10">
+                            <Icon:PackIconMaterial Kind="Logout" Width="23" Height="31"/>
+                        </Button>
+                    </StackPanel>
+                </Grid>
+            </Border>
+
+            <TabControl Grid.Column="1">
+                <TabItem Header="{DynamicResource SubjectText}" Height="85" HeaderTemplate="{DynamicResource CustomTabHeaderTemplate}">
+                    <Grid Margin="25">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="{DynamicResource CourseStudentList}" 
+                   FontWeight="Bold" 
+                   Foreground="#eb984e" 
+                   FontSize="22" 
+                   Margin="10,0,10,10" />
+                        <Border Grid.Row="1" BorderBrush="Gray" BorderThickness="40" CornerRadius="30" Background="White"  MaxWidth="700" Margin="5,5,5,0">
+                            <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                                <Grid>
+                                    <ListView ItemsSource="{Binding Predmeti}" 
+                              SelectedItem="{Binding SelectedPredmet, Mode=TwoWay}" 
+                              VerticalAlignment="Stretch"
+                              HorizontalAlignment="Stretch"
+                              MinHeight="200">
+                                        <ListView.ItemTemplate>
+                                            <DataTemplate>
+                                                <StackPanel Orientation="Horizontal" Margin="15">
+                                                    <TextBlock Text="{Binding Naziv}" 
+                                               VerticalAlignment="Center" 
+                                               FontSize="14" 
+                                               FontFamily="Poppins" 
+                                               FontWeight="Bold" 
+                                               Foreground="#0096FF"/>
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </ListView.ItemTemplate>
+                                    </ListView>
+                                    <Image Source="pack://application:,,,/Images/BoxBook.png" 
+                           HorizontalAlignment="Right" 
+                           VerticalAlignment="Bottom" 
+                           Height="140" 
+                           Margin="0 10 10 0"/>
+                                </Grid>
+                            </ScrollViewer>
+                        </Border>
+                        <Button Grid.Row="2" Command="{Binding PregledStudenataCommand}" 
+                MinHeight="50"
+                MinWidth="150"
+                Background="Gray" 
+                Foreground="White"
+                FontWeight="Bold"
+                HorizontalAlignment="Center"
+                Style="{StaticResource MaterialDesignFlatButton}">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="Person" Width="24" Height="24" Foreground="White" Margin="0,0,0,0"/>
+                                <TextBlock Text="{DynamicResource StudentList}" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Button>
+                    </Grid>
+                </TabItem>
+                <TabItem Header="{DynamicResource HomeworkExamText}" Height="85" HeaderTemplate="{DynamicResource CustomTabHeaderTemplate}">
+                    <TabControl>
+                        <TabItem Header="{DynamicResource TaskAddText}" HeaderTemplate="{DynamicResource CustomTabHeaderTemplate}" Height="85">
+                            <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                                <Grid Margin="20">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1.5*"/>
+                                        <ColumnDefinition Width="2.5*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Border Grid.Column="0"
+                    BorderBrush="#ff808080" BorderThickness="20"
+                    Background="White" CornerRadius="40"
+                    Padding="20" Margin="20,20,20,10">
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                            </Grid.RowDefinitions>
+
+                                            <TextBlock Text="{DynamicResource SelectSubject}" Margin="0,10,0,5" Grid.Row="0"/>
+                                            <ComboBox ItemsSource="{Binding Predmeti}" 
+                              SelectedItem="{Binding SelectedPredmet}"
+                              DisplayMemberPath="Naziv"
+                              Background="LightGray"
+                              Margin="0,0,0,10"
+                              HorizontalAlignment="Stretch"
+                              Grid.Row="1"/>
+
+                                            <TextBlock Text="{DynamicResource TaskNameText}" Margin="0,10,0,5" Grid.Row="2"/>
+                                            <TextBox Text="{Binding TaskName, Mode=TwoWay}"
+                             Background="LightGray" Margin="0,0,0,10"
+                             HorizontalAlignment="Stretch" Grid.Row="3"/>
+
+                                            <TextBlock Text="{DynamicResource DeadLineText}" Margin="0,0,0,5" Grid.Row="4"/>
+                                            <DatePicker SelectedDate="{Binding TaskDeadline, Mode=TwoWay}"
+                                DisplayDateStart="{x:Static sys:DateTime.Today}" 
+                                Background="LightGray" Margin="0,0,0,10"
+                                HorizontalAlignment="Stretch"
+                                Grid.Row="5"/>
+
+                                            <TextBlock Text="{DynamicResource ExamIdText}" Margin="0,10,0,5" Grid.Row="6"/>
+                                            <TextBox Text="{Binding TaskCode, Mode=TwoWay}" 
+                             Background="LightGray" Margin="0,30,0,10"
+                             HorizontalAlignment="Stretch"
+                             Grid.Row="7"/>
+                                        </Grid>
+                                    </Border>
+
+
+                                    <Border Grid.Column="1"
+        BorderBrush="#b4846a" CornerRadius="40"
+        BorderThickness="25" Padding="0" Margin="20,20,30,10">
+                                        <Grid Background="LightYellow">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="*"/>
+                                            </Grid.RowDefinitions>
+
+                                            <TextBlock Text="{DynamicResource DescriptionText}"
+                   FontStyle="Italic" Foreground="#4a342a"
+                   FontSize="20" Margin="20,30,20,20" Grid.Row="0"/>
+
+                                            <Grid Grid.Row="1">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="Auto"/>
+                                                    <RowDefinition Height="*"/>
+                                                </Grid.RowDefinitions>
+
+                                                <Image Source="pack://application:,,,/Images/pushPin.png"
+                   HorizontalAlignment="Right" Width="60" Height="50"
+                   Margin="0,-40,20,0" Grid.Row="0"/>
+
+                                                <TextBox Text="{Binding TaskDescription, Mode=TwoWay}"
+                     TextWrapping="Wrap"
+                     AcceptsReturn="True"
+                     Background="Transparent"
+                     BorderThickness="0"
+                     VerticalScrollBarVisibility="Auto"
+                     HorizontalScrollBarVisibility="Auto"
+                     HorizontalAlignment="Stretch"
+                     VerticalAlignment="Stretch"
+                     Margin="15"
+                     MaxWidth="700"
+                     Grid.Row="1"/>
+                                            </Grid>
+                                        </Grid>
+                                    </Border>
+
+                                    <Button Grid.Row="1" Grid.Column="1"
+                    Command="{Binding AddTaskCommand}"
+                    Content="{DynamicResource AddButton}"
+                    Style="{DynamicResource CustomButtonStyle}"
+                    BorderThickness="2"
+                    Margin="0,10,0,0"
+                    HorizontalAlignment="Center"
+                    Width="120" Height="50"/>
+                                </Grid>
+                            </ScrollViewer>
+                        </TabItem>
+                        <TabItem Header="{DynamicResource TaskOverviewText}" 
+         HeaderTemplate="{DynamicResource CustomTabHeaderTemplate}" 
+         Height="85">
+                            <Grid Margin="30">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <!-- Border u Grid.Row="0", Grid.Column="0" -->
+                                <Border Grid.Row="0" Grid.Column="0"
+                BorderBrush="Gray" 
+                BorderThickness="20" 
+                CornerRadius="10" 
+                Padding="10"   Margin="10"
+                Background="White">
+                                    <DataGrid ItemsSource="{Binding Zadaci}" 
+                      SelectedItem="{Binding SelectedDomaci}"
+                      AutoGenerateColumns="False" 
+                      CanUserAddRows="False" 
+                      HeadersVisibility="Column" 
+                      GridLinesVisibility="Horizontal" 
+                      HorizontalScrollBarVisibility="Auto"
+                      VerticalScrollBarVisibility="Auto"
+                      VerticalAlignment="Stretch"
+                      HorizontalAlignment="Stretch"
+                      Background="Transparent">
+                                        <DataGrid.Columns>
+                                            <DataGridTextColumn Binding="{Binding predmet.Naziv}" Width="3*" MinWidth="250">
+                                                <DataGridTextColumn.HeaderTemplate>
+                                                    <DataTemplate>
+                                                        <TextBlock Text="{DynamicResource SubjectText}" />
+                                                    </DataTemplate>
+                                                </DataGridTextColumn.HeaderTemplate>
+                                            </DataGridTextColumn>
+
+                                            <DataGridTextColumn Binding="{Binding naziv}" Width="2*" MinWidth="250">
+                                                <DataGridTextColumn.HeaderTemplate>
+                                                    <DataTemplate>
+                                                        <TextBlock Text="{DynamicResource NameText}" />
+                                                    </DataTemplate>
+                                                </DataGridTextColumn.HeaderTemplate>
+                                            </DataGridTextColumn>
+
+                                            <DataGridTextColumn Binding="{Binding rok, StringFormat={}{0:dd/MM/yyyy}}" Width="1.5*" MinWidth="220">
+                                                <DataGridTextColumn.HeaderTemplate>
+                                                    <DataTemplate>
+                                                        <TextBlock Text="{DynamicResource DeadLineText}" />
+                                                    </DataTemplate>
+                                                </DataGridTextColumn.HeaderTemplate>
+                                            </DataGridTextColumn>
+
+                                            <DataGridTextColumn Binding="{Binding idDomaciZadatak}" Width="1*" MinWidth="200">
+                                                <DataGridTextColumn.HeaderTemplate>
+                                                    <DataTemplate>
+                                                        <TextBlock Text="{DynamicResource IdText}" />
+                                                    </DataTemplate>
+                                                </DataGridTextColumn.HeaderTemplate>
+                                            </DataGridTextColumn>
+                                        </DataGrid.Columns>
+                                    </DataGrid>
+                                </Border>
+                            </Grid>
+                        </TabItem>
+
+
+                        <!--                     <TabItem Header="{DynamicResource TaskOverviewText}" 
+         HeaderTemplate="{DynamicResource CustomTabHeaderTemplate}" 
+         Height="85">
+                            <Grid Margin="30">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Border BorderBrush="Gray" BorderThickness="2" CornerRadius="10">
+                                    <DataGrid Grid.Row="0" Grid.Column="0"
+                  ItemsSource="{Binding Zadaci}" 
+                  SelectedItem="{Binding SelectedDomaci}"
+                  AutoGenerateColumns="False" 
+                  CanUserAddRows="False" 
+                  HeadersVisibility="Column" 
+                  GridLinesVisibility="Horizontal" 
+                  HorizontalScrollBarVisibility="Auto"
+                  VerticalScrollBarVisibility="Auto"
+                  VerticalAlignment="Stretch"
+                  HorizontalAlignment="Center">
+                                        <DataGrid.Columns>
+                                            <DataGridTextColumn Binding="{Binding predmet.Naziv}" Width="3*" MinWidth="250">
+                                                <DataGridTextColumn.HeaderTemplate>
+                                                    <DataTemplate>
+                                                        <TextBlock Text="{DynamicResource SubjectText}" />
+                                                    </DataTemplate>
+                                                </DataGridTextColumn.HeaderTemplate>
+                                            </DataGridTextColumn>
+
+                                            <DataGridTextColumn Binding="{Binding naziv}" Width="2*" MinWidth="250">
+                                                <DataGridTextColumn.HeaderTemplate>
+                                                    <DataTemplate>
+                                                        <TextBlock Text="{DynamicResource NameText}" />
+                                                    </DataTemplate>
+                                                </DataGridTextColumn.HeaderTemplate>
+                                            </DataGridTextColumn>
+
+                                            <DataGridTextColumn Binding="{Binding rok, StringFormat={}{0:dd/MM/yyyy}}" Width="1.5*" MinWidth="220">
+                                                <DataGridTextColumn.HeaderTemplate>
+                                                    <DataTemplate>
+                                                        <TextBlock Text="{DynamicResource DeadLineText}" />
+                                                    </DataTemplate>
+                                                </DataGridTextColumn.HeaderTemplate>
+                                            </DataGridTextColumn>
+
+                                            <DataGridTextColumn Binding="{Binding idDomaciZadatak}" Width="1*" MinWidth="200">
+                                                <DataGridTextColumn.HeaderTemplate>
+                                                    <DataTemplate>
+                                                        <TextBlock Text="{DynamicResource IdText}" />
+                                                    </DataTemplate>
+                                                </DataGridTextColumn.HeaderTemplate>
+                                            </DataGridTextColumn>
+
+                                            <DataGridTextColumn Binding="{Binding opis}" Width="10*" MinWidth="500" ElementStyle="{StaticResource WrapStyle}">
+                                            <DataGridTextColumn.HeaderTemplate>
+                                                <DataTemplate>
+                                                    <TextBlock Text="{DynamicResource DescriptionText}" />
+                                                </DataTemplate>
+                                            </DataGridTextColumn.HeaderTemplate>
+                                        </DataGridTextColumn>  
+                                        </DataGrid.Columns>
+                                    </DataGrid>
+                                </Border>
+                            </Grid>
+                        </TabItem>
+   -->
+                    </TabControl>
+                </TabItem>
+                <TabItem Header="{DynamicResource AttendanceText}" HeaderTemplate="{DynamicResource CustomTabHeaderTemplate}" Height="85">
+                    <Grid>
+                        <TabControl>
+                            <TabItem Header="{DynamicResource RecordAttendance}" Height="85" HeaderTemplate="{DynamicResource CustomTabHeaderTemplate}">
+                                <StackPanel Margin="30,50,30,10">
+                                    <Grid Margin="10,0,10,30">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="0,20,0,0" Grid.Column="0">
+                                            <Image Source="pack://application:,,,/Images/educational.png" Width="50" Height="50"/>
+                                            <TextBlock Text="{DynamicResource SelectSubject}" FontSize="18" Margin="10,0,0,0" VerticalAlignment="Center"/>
+                                            <ComboBox ItemsSource="{Binding Predmeti}" 
+                          SelectedItem="{Binding SelectedPredmetPrisustvo}"
+                          Background="#f7dc6f" 
+                          Width="220" 
+                          Margin="10,0,0,0">
+                                                <ComboBox.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <TextBlock Text="{Binding Naziv}"/>
+                                                    </DataTemplate>
+                                                </ComboBox.ItemTemplate>
+                                            </ComboBox>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Grid.Column="1" HorizontalAlignment="Right">
+                                            <Image Source="pack://application:,,,/Images/schedule.png" Width="55" Height="50" Margin="10,0,10,0"/>
+                                            <TextBlock Text="{DynamicResource DateTimeText}" FontSize="18" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                                            <Border Background="White" BorderBrush="Gray" BorderThickness="1" CornerRadius="5" Margin="10,0,20,0">
+                                                <DatePicker SelectedDate="{Binding SelectedDate, Mode=TwoWay}"
+                                Width="200" 
+                                Margin="5"
+                                DisplayDateStart="{x:Static sys:DateTime.Today}">
+                                                    <DatePicker.Resources>
+                                                        <Style TargetType="DatePickerTextBox">
+                                                            <Setter Property="IsReadOnly" Value="True"/>
+                                                        </Style>
+                                                    </DatePicker.Resources>
+                                                </DatePicker>
+                                            </Border>
+                                        </StackPanel>
+                                    </Grid>
+
+                                    
+                                    <Border BorderBrush="Gray" BorderThickness="18" CornerRadius="15" Background="#e2e3de" Margin="0,20,10,10">
+                                        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                                            <DataGrid ItemsSource="{Binding StudentiZaPrisustvo}" 
+          AutoGenerateColumns="False" CanUserAddRows="False"
+          Margin="0,5,0,10"
+          SelectionMode="Single"
+          IsReadOnly="False">
+                                                <DataGrid.Columns>
+                                                    <DataGridTextColumn Header="{DynamicResource NameText}" 
+                            Width="200" 
+                            Binding="{Binding Ime}"/>
+                                                    <DataGridTextColumn Header="{DynamicResource SurnameText}" 
+                            Width="200" 
+                            Binding="{Binding Prezime}"/>
+                                                    <DataGridTemplateColumn Header="{DynamicResource PresentText}">
+                                                        <DataGridTemplateColumn.CellTemplate>
+                                                            <DataTemplate>
+                                                                <CheckBox IsChecked="{Binding IsPresent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                              HorizontalAlignment="Center"
+                              VerticalAlignment="Center"/>
+                                                            </DataTemplate>
+                                                        </DataGridTemplateColumn.CellTemplate>
+                                                    </DataGridTemplateColumn>
+                                                </DataGrid.Columns>
+                                            </DataGrid>
+                                        </ScrollViewer>
+                                    </Border>
+                                    <Button Command="{Binding SaveAttendanceCommand}"
+                Content="{DynamicResource SaveButton}" 
+                Style="{DynamicResource CustomButtonStyle}" 
+                HorizontalAlignment="Right" 
+                Width="150" 
+                Margin="0,10,20,0"/>
+                                </StackPanel>
+                            </TabItem>
+                        <!--    <TabItem Header="{DynamicResource AttendanceO}" Height="85" HeaderTemplate="{DynamicResource CustomTabHeaderTemplate}">
+                                <StackPanel Margin="10">
+                                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="10,50,0,0">
+                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10,0,0,0">
+                                            <Image Source="pack://application:,,,/Images/educational.png" Width="50" Height="50" Margin="0,0,5,10"/>
+                                            <TextBlock Text="{DynamicResource SelectSubject}" FontSize="18" Margin="0,0,0,10" VerticalAlignment="Center"/>
+                                            <ComboBox ItemsSource="{Binding Predmeti}"
+SelectedItem="{Binding SelectedPredmetZaPregled, Mode=TwoWay}"
+Background="#f7dc6f"
+Width="250"
+Padding="5,7,7,5"
+Margin="10,0,0,10">
+                                                <ComboBox.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <TextBlock Text="{Binding Naziv}"/>
+                                                    </DataTemplate>
+                                                </ComboBox.ItemTemplate>
+                                            </ComboBox>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="220,0,10,0">
+                                            <Image Source="pack://application:,,,/Images/StudentIcon.png" Width="50" Height="55" Margin="5,0,0,10"/>
+                                            <TextBlock Text="{DynamicResource SelectStudentText}" FontSize="18" Margin="10,0,0,10" VerticalAlignment="Center"/>
+                                            <ComboBox ItemsSource="{Binding Studenti}"
+SelectedItem="{Binding SelectedStudentZaPrisustvo, Mode=TwoWay}"
+Background="#f7dc6f"
+Width="200"
+Margin="10,0,0,10">
+                                                <ComboBox.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <TextBlock Text="{Binding DisplayText}"/>
+                                                    </DataTemplate>
+                                                </ComboBox.ItemTemplate>
+                                            </ComboBox>
+                                        </StackPanel>
+                                    </StackPanel>
+                                    <Border BorderBrush="Gray" BorderThickness="18" CornerRadius="15" Background="#e2e3de" Margin="0,10,20,0">
+                                        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                                            <DataGrid ItemsSource="{Binding PrisustvaZaStudenta}" 
+                          AutoGenerateColumns="False" CanUserAddRows="False"
+                          Margin="0,5,0,10">
+                                                <DataGrid.Columns>
+                                                    <DataGridTextColumn Header="{DynamicResource NameText}" Width="200" Binding="{Binding ImeStudenta}"/>
+                                                    <DataGridTextColumn Header="{DynamicResource SurnameText}" Width="200" Binding="{Binding PrezimeStudenta}"/>
+                                                    <DataGridTextColumn Header="{DynamicResource PresentText}" Width="150" Binding="{Binding Status}"/>
+                                                
+                                                    <DataGridTextColumn Header="{DynamicResource DateTimeText}" Width="150">
+                                                        <DataGridTextColumn.Binding>
+                                                            <Binding Path="Datum" StringFormat="dd.MM.yyyy" />
+                                                        </DataGridTextColumn.Binding>
+                                                    </DataGridTextColumn>
+
+                                                </DataGrid.Columns>
+                                            </DataGrid>
+                                        </ScrollViewer>
+                                    </Border>
+                                </StackPanel>
+                            </TabItem> -->
+                            <TabItem Header="{DynamicResource AttendanceO}" Height="85" HeaderTemplate="{DynamicResource CustomTabHeaderTemplate}">
+                                <Grid Margin="10">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid Grid.Row="0" Margin="0,20,0,10">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <StackPanel Orientation="Horizontal" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,30,30,10">
+                                            <Image Source="pack://application:,,,/Images/educational.png" Width="50" Height="50" Margin="30,0,5,0"/>
+                                            <TextBlock Text="{DynamicResource SelectSubject}" FontSize="16" VerticalAlignment="Center" Margin="5,0"/>
+                                            <ComboBox ItemsSource="{Binding Predmeti}"
+                          SelectedItem="{Binding SelectedPredmetZaPregled, Mode=TwoWay}"
+                          Background="#f7dc6f"
+                          MinWidth="150"
+                          Padding="5"
+                          Margin="10,0,0,0">
+                                                <ComboBox.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <TextBlock Text="{Binding Naziv}"/>
+                                                    </DataTemplate>
+                                                </ComboBox.ItemTemplate>
+                                            </ComboBox>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10,30,50,0">
+                                            <Image Source="pack://application:,,,/Images/StudentIcon.png" Width="55" Height="50" Margin="0,0,5,0"/>
+                                            <TextBlock Text="{DynamicResource SelectStudentText}" FontSize="16" VerticalAlignment="Center" Margin="5,0"/>
+                                            <ComboBox ItemsSource="{Binding Studenti}"
+                          SelectedItem="{Binding SelectedStudentZaPrisustvo, Mode=TwoWay}"
+                          Background="#f7dc6f"
+                          MinWidth="150"
+                          Padding="5"
+                          Margin="10,0,0,0">
+                                                <ComboBox.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <TextBlock Text="{Binding DisplayText}"/>
+                                                    </DataTemplate>
+                                                </ComboBox.ItemTemplate>
+                                            </ComboBox>
+                                        </StackPanel>
+                                    </Grid>
+
+                                    <Border Grid.Row="1" BorderBrush="Gray" BorderThickness="18" CornerRadius="15" Background="#e2e3de" Margin="30,10,30,10">
+
+                                        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                                            <DataGrid ItemsSource="{Binding PrisustvaZaStudenta}" 
+AutoGenerateColumns="False" CanUserAddRows="False"
+Margin="0,5,0,10">
+                                                <DataGrid.Columns>
+                                                    <DataGridTextColumn Width="200" Binding="{Binding ImeStudenta}">
+                                                        <DataGridTextColumn.HeaderTemplate>
+                                                            <DataTemplate>
+                                                                <TextBlock Text="{DynamicResource NameText}" />
+                                                            </DataTemplate>
+                                                        </DataGridTextColumn.HeaderTemplate>
+                                                    </DataGridTextColumn>
+                                                    <DataGridTextColumn Width="200" Binding="{Binding PrezimeStudenta}">
+                                                        <DataGridTextColumn.HeaderTemplate>
+                                                            <DataTemplate>
+                                                                <TextBlock Text="{DynamicResource SurnameText}" />
+                                                            </DataTemplate>
+                                                        </DataGridTextColumn.HeaderTemplate>
+                                                    </DataGridTextColumn>
+                                                   <!-- <DataGridTextColumn Width="150" Binding="{Binding Status}">
+                                                        <DataGridTextColumn.HeaderTemplate>
+                                                            <DataTemplate>
+                                                                <TextBlock Text="{DynamicResource PresentText}" />
+                                                            </DataTemplate>
+                                                        </DataGridTextColumn.HeaderTemplate>
+                                                    </DataGridTextColumn>  -->
+                                                    <DataGridTextColumn Width="150">
+                                                        <DataGridTextColumn.Binding>
+                                                            <Binding Path="Datum" StringFormat="dd.MM.yyyy" />
+                                                        </DataGridTextColumn.Binding>
+                                                        <DataGridTextColumn.HeaderTemplate>
+                                                            <DataTemplate>
+                                                                <TextBlock Text="{DynamicResource DateTimeText}" />
+                                                            </DataTemplate>
+                                                        </DataGridTextColumn.HeaderTemplate>
+                                                    </DataGridTextColumn>
+                                                </DataGrid.Columns>
+
+                                            </DataGrid>
+                                        </ScrollViewer>
+                                    </Border>
+                                </Grid>
+                            </TabItem>
+
+
+                        </TabControl>
+                    </Grid>
+                </TabItem>
+
+                <TabItem Header="{DynamicResource GradeText}" Height="85" HeaderTemplate="{DynamicResource CustomTabHeaderTemplate}">
+                    <Grid>
+                        <TabControl>
+                            <TabItem Header="{DynamicResource GradeEntry}" Height="85" HeaderTemplate="{DynamicResource CustomTabHeaderTemplate}">
+                                <Border BorderBrush="Gray" BorderThickness="15" CornerRadius="20" Height="500" Width="600" Padding="10">
+                                    <Border.Background>
+                                        <ImageBrush ImageSource="pack://application:,,,/Images/grade.jpg" Stretch="UniformToFill" />
+                                    </Border.Background>
+                                    <StackPanel Margin="10">
+                                        <TextBlock Text="{DynamicResource GradeEntryText}" FontWeight="Bold" Foreground="#fccb3e" FontSize="20" Margin="200,0,0,10" />
+
+                                        <TextBlock Text="{DynamicResource SubjectText}" />
+                                        <ComboBox ItemsSource="{Binding Predmeti}" 
+                                  SelectedItem="{Binding SelectedPredmetOcjena}"
+                                  DisplayMemberPath="Naziv"
+                                  Background="LightGray"
+                                  Margin="0,5,0,10"/>
+
+                                        <TextBlock Text="{DynamicResource ExamDateText}" VerticalAlignment="Center" />
+                                        <DatePicker SelectedDate="{Binding ExamDate}" Margin="0,5,0,10" />
+                                        <TextBlock Text="{DynamicResource Student}" VerticalAlignment="Center" />
+                                        <ComboBox ItemsSource="{Binding Studenti}"
+              SelectedItem="{Binding SelectedStudentZaPregled, Mode=TwoWay}"
+              DisplayMemberPath="DisplayText"
+              Background="LightGray"
+              Margin="0,5,0,10"
+              VerticalContentAlignment="Center"
+              Height="30"
+              IsSynchronizedWithCurrentItem="False">
+
+                                            <ComboBox.ItemContainerStyle>
+                                                <Style TargetType="ComboBoxItem">
+                                                    <Setter Property="Padding" Value="5"/>
+                                                    <Setter Property="FontSize" Value="14"/>
+                                                </Style>
+                                            </ComboBox.ItemContainerStyle>
+                                        </ComboBox>
+
+                                        <Label Content="{DynamicResource PointsText}" />
+                                        <TextBox Text="{Binding Points, UpdateSourceTrigger=PropertyChanged}" 
+                                 Background="LightGray" 
+                                 Margin="0,5,0,10" />
+
+                                        <Label Content="{DynamicResource GradeText}" />
+                                        <TextBox Text="{Binding Grade, UpdateSourceTrigger=PropertyChanged}" 
+                                 Background="LightGray" 
+                                 Margin="0,5,0,10" />
+
+                                        <Button Content="{DynamicResource SaveButton}" 
+                                HorizontalAlignment="Right" 
+                                Width="150" 
+                                Margin="0,10,0,0" 
+                                Command="{Binding SaveGradeCommand}" />
+                                    </StackPanel>
+                                </Border>
+                            </TabItem>
+
+                            <TabItem Header="{DynamicResource GradeReview}" Height="85" HeaderTemplate="{DynamicResource CustomTabHeaderTemplate}">
+                                <Grid>
+                                    <StackPanel Margin="10,50,10,10">
+                                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="30,20,0,0">
+                                            <StackPanel Orientation="Horizontal" Margin="0,0,20,0" VerticalAlignment="Center">
+                                                <Image Source="pack://application:,,,/Images/educational.png" Width="50" Height="50" Margin="0,0,10,0" />
+                                                <TextBlock Text="{DynamicResource SelectSubject}" Margin="1,0,0,40" FontSize="18" VerticalAlignment="Center" />
+                                                <ComboBox ItemsSource="{Binding Predmeti}" 
+                                          SelectedItem="{Binding SelectedPredmetZaPregled}"
+                                          DisplayMemberPath="Naziv"
+                                          Background="#f7dc6f" 
+                                          Width="200" 
+                                          Margin="-110,20,0,0"/>
+                                            </StackPanel>
+
+                                            <StackPanel Orientation="Horizontal" Margin="660,0,0,0" VerticalAlignment="Center">
+                                                <Image Source="pack://application:,,,/Images/StudentIcon.png" Width="50" Height="50" Margin="150,10,10,0" />
+                                                <TextBlock Text="{DynamicResource SelectStudentText}" Margin="0,10,30,40" FontSize="18" VerticalAlignment="Center" />
+                                                <ComboBox ItemsSource="{Binding Studenti}" 
+                                          SelectedItem="{Binding SelectedStudentZaPregled, Mode=TwoWay}"
+                                          DisplayMemberPath="DisplayText"
+                                          Background="#f7dc6f" 
+                                          Width="200" 
+                                          Margin="-170,20,0,0"/>
+                                            </StackPanel>
+                                        </StackPanel>
+
+                                        <Border BorderBrush="Gray" BorderThickness="18" CornerRadius="15" Background="#e2e3de" Margin="30,20,30,20">
+                                            <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                                                <DataGrid ItemsSource="{Binding IspitZaStudenta}" 
+                                          AutoGenerateColumns="False"  CanUserAddRows="False"
+                                          Margin="0,5,0,10">
+                                                    <DataGrid.Columns>
+                                       
+                                                        <DataGridTextColumn Width="200" Binding="{Binding Student.ime}">
+                                                            <DataGridTextColumn.HeaderTemplate>
+                                                                <DataTemplate>
+                                                                    <TextBlock Text="{DynamicResource NameText}" />
+                                                                </DataTemplate>
+                                                            </DataGridTextColumn.HeaderTemplate>
+                                                        </DataGridTextColumn>
+
+
+                                                        <DataGridTextColumn Width="200" Binding="{Binding Student.prezime}">
+                                                            <DataGridTextColumn.HeaderTemplate>
+                                                                <DataTemplate>
+                                                                    <TextBlock Text="{DynamicResource SurnameText}" />
+                                                                </DataTemplate>
+                                                            </DataGridTextColumn.HeaderTemplate>
+                                                        </DataGridTextColumn>
+                                                        <DataGridTextColumn Width="150" Binding="{Binding ocjena}">
+                                                            <DataGridTextColumn.HeaderTemplate>
+                                                                <DataTemplate>
+                                                                    <TextBlock Text="{DynamicResource GradeText}" />
+                                                                </DataTemplate>
+                                                            </DataGridTextColumn.HeaderTemplate>
+                                                        </DataGridTextColumn>
+                                                        <DataGridTextColumn Width="150">
+                                                            <DataGridTextColumn.Binding>
+                                                                <Binding Path="datumIspita" StringFormat="dd.MM.yyyy" />
+                                                            </DataGridTextColumn.Binding>
+                                                            <DataGridTextColumn.HeaderTemplate>
+                                                                <DataTemplate>
+                                                                    <TextBlock Text="{DynamicResource DateTimeText}" />
+                                                                </DataTemplate>
+                                                            </DataGridTextColumn.HeaderTemplate>
+                                                        </DataGridTextColumn>
+                                                    </DataGrid.Columns>
+
+                                                </DataGrid>
+                                            </ScrollViewer>
+                                        </Border>
+                                    </StackPanel>
+                                </Grid>
+                            </TabItem>
+                        </TabControl>
+                    </Grid>
+                </TabItem>
+            </TabControl>
+        </Grid>
+    </ScrollViewer>
+</Window>

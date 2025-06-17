@@ -1,0 +1,426 @@
+﻿<Window x:Class="ASystem.AdminWindow"
+        x:Name="adminRoot"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:resources="clr-namespace:PrviProjektniZadatakHCI.Resources;assembly=PrviProjektniZadatakHCI"
+        xmlns:local="clr-namespace:ASystem" xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local1="clr-namespace:PrviProjektniZadatakHCI.View"
+        xmlns:converters="clr-namespace:PrviProjektniZadatakHCI.Util"
+        xmlns:local2="clr-namespace:PrviProjektniZadatakHCI.ViewModel"
+        mc:Ignorable="d"  
+        WindowState="Maximized"
+        Icon="pack://application:,,,/Images/adminIcon.ico"
+        Title="Admin">
+
+    <!--   <Window.InputBindings>
+        <KeyBinding Command="ApplicationCommands.Undo" Gesture="Ctrl+Z" />
+        <KeyBinding Key="Escape" Command="{x:Static local:AdminWindow.CancelCommand}" />
+        <KeyBinding Key="L" Modifiers="Control" Command="{x:Static local:AdminWindow.LogoutCommand}" />
+
+
+    </Window.InputBindings>   -->
+    <Window.Background>
+        <DynamicResource ResourceKey="Backdrop" />
+    </Window.Background>
+    <Window.Resources>
+        <SolidColorBrush x:Key="ButtonBackgroundBrush" Color="LightBlue"/>
+        <SolidColorBrush x:Key="ButtonTextColor" Color="White"/>
+        <SolidColorBrush x:Key="ButtonBorderColor" Color="Gray"/>
+        <converters:EntityToVisibilityConverter x:Key="EntityToVisibilityConverter"/>
+        <DataTemplate x:Key="StudentTemplate">
+            <StackPanel DataContext="{Binding DataContext.UpdateStudentVM, RelativeSource={RelativeSource AncestorType=Window}}">
+                <Border BorderBrush="Gray" CornerRadius="20" Padding="30" Width="680" Height="380" Margin="10,0,180,10" Background="WhiteSmoke" BorderThickness="10">
+                    <StackPanel>
+                        <TextBlock Text="{DynamicResource NameText}" Style="{DynamicResource DynamicTextBlockStyle}" />
+                        <TextBox Text="{Binding SelectedStudent.ime, Mode=TwoWay}" Margin="0,10,10,5" />
+
+                        <TextBlock Text="{DynamicResource SurnameText}" Style="{DynamicResource DynamicTextBlockStyle}" />
+                        <TextBox Text="{Binding SelectedStudent.prezime, Mode=TwoWay}" Margin="0,10,10,5" />
+
+                        <TextBlock Text="{DynamicResource EmailText}" Style="{DynamicResource DynamicTextBlockStyle}" />
+                        <TextBox Text="{Binding SelectedStudent.email, Mode=TwoWay}" Margin="0,10,10,5" />
+
+                        <TextBlock Text="{DynamicResource YearOfStudy}" Style="{DynamicResource DynamicTextBlockStyle}" />
+                        <TextBox Text="{Binding GodinaStudijaInput, Mode=TwoWay}" Margin="0,10,10,5" />
+
+                        <TextBlock Text="{DynamicResource IndexNumberText}" Style="{DynamicResource DynamicTextBlockStyle}" />
+                        <TextBox Text="{Binding SelectedStudent.BrojIndeksa, Mode=TwoWay}" Margin="0,0,10,5" />
+                    </StackPanel>
+                </Border>
+                <Button Content="{DynamicResource UpdateButton}"
+                Style="{DynamicResource CustomButtonStyle}"
+                Command="{Binding UpdateStudentCommand}"
+                Width="150" Margin="-160,10,10,10" />
+            </StackPanel>
+        </DataTemplate>
+
+        <DataTemplate x:Key="ProfesorTemplate">
+            <StackPanel>
+                <Border Background="WhiteSmoke" BorderBrush="Gray" Width="680" Margin="10,0,180,10" Height="350" Padding="30" CornerRadius="50" BorderThickness="10">
+                    <StackPanel>
+                        <TextBlock Text="{DynamicResource NameText}" Margin="10,5" Style="{DynamicResource DynamicTextBlockStyle}" />
+                        <TextBox Text="{Binding SelectedProfessor.ime, Mode=TwoWay}" Margin="10,5" />
+
+                        <TextBlock Text="{DynamicResource SurnameText}" Margin="10,5" Style="{DynamicResource DynamicTextBlockStyle}" />
+                        <TextBox Text="{Binding SelectedProfessor.prezime, Mode=TwoWay}" Margin="10,5" />
+
+                        <TextBlock Text="{DynamicResource EmailText}" Margin="10,5" Style="{DynamicResource DynamicTextBlockStyle}" />
+                        <TextBox Text="{Binding SelectedProfessor.email, Mode=TwoWay}" Margin="10,5" />
+
+                        <TextBlock Name="emailStudentError" Text="{DynamicResource InvalidEmailFormat}" Foreground="Red" Visibility="Collapsed" />
+
+                        <TextBlock Text="{DynamicResource AcademicTitleText}" Margin="10,5" Style="{DynamicResource DynamicTextBlockStyle}" />
+                        <TextBox Text="{Binding SelectedProfessor.Zvanje, Mode=TwoWay}" Margin="10,5"/>
+                    </StackPanel>
+                </Border>
+                <Button Content="{DynamicResource UpdateButton}"
+                Command="{Binding UpdateProfessorCommand}"
+                Style="{DynamicResource CustomButtonStyle}"
+                FontFamily="{DynamicResource DynamicFont}"
+                Width="150" Margin="-160,10,10,10" />
+            </StackPanel>
+        </DataTemplate>
+        <DataTemplate x:Key="SubjectTemplate">
+            <StackPanel>
+                <Border BorderBrush="Gray" CornerRadius="20" Padding="20" Width="700" Height="300" Margin="10,0,180,10" Background="WhiteSmoke" BorderThickness="10">
+                    <StackPanel>
+                        <TextBlock Text="{DynamicResource CourseNameText}" Margin="10,5" Style="{DynamicResource DynamicTextBlockStyle}" />
+                        <TextBox Text="{Binding SelectedSubject.Naziv, Mode=TwoWay}" Margin="10,5"/>
+
+                        <TextBlock Text="{DynamicResource DescriptionText}" Margin="10,5" Style="{DynamicResource DynamicTextBlockStyle}" />
+                        <TextBox Text="{Binding SelectedSubject.Opis, Mode=TwoWay}" Margin="10,5"/>
+
+                        <TextBlock Text="{DynamicResource ECTSText}" Margin="10,5" Style="{DynamicResource DynamicTextBlockStyle}" />
+                       <TextBox Text="{Binding ECTSInput, Mode=TwoWay}" Margin="10,5"/>
+                        <!--<TextBox Text="{Binding SelectedSubject.ECTS, Mode=TwoWay}"></TextBox>  -->
+                    </StackPanel>
+                </Border>
+                <Button Content="{DynamicResource UpdateButton}"
+                Command="{Binding UpdateSubjectCommand}"
+                Style="{DynamicResource CustomButtonStyle}"
+                FontFamily="{DynamicResource DynamicFont}"
+                Width="150" Margin="-160,10,10,10"/>
+            </StackPanel>
+        </DataTemplate>
+
+
+
+        <converters:UpdateTemplateSelector x:Key="UpdateTemplateSelector"
+                              StudentTemplate="{StaticResource StudentTemplate}"
+                              ProfessorTemplate="{StaticResource ProfesorTemplate}"
+                              SubjectTemplate="{StaticResource SubjectTemplate}" />
+    </Window.Resources>
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <!--     <Border VerticalAlignment="Stretch"
+        HorizontalAlignment="Stretch" CornerRadius="20" Opacity="0.75" Background="#FFFFFF" BorderThickness="10" RenderTransformOrigin="0.5,0.5" Margin="10,10,0,10">
+                <Border.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-0.201"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Border.RenderTransform>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Button Style="{DynamicResource topButton}" Command="{Binding UndoCommand}" HorizontalAlignment="Center" ToolTip="Undo" VerticalAlignment="Top" Margin="0,20,0,0" Width="50" Height="40">
+                        <Icon:PackIconMaterial Kind="Undo" Width="25" Height="30"/>
+                    </Button>
+
+                    <Border Grid.Row="1" Margin="12,10,11,0" Background="AntiqueWhite" Height="59" VerticalAlignment="Top">
+                        <DockPanel Margin="0,0,0,0">
+                            <Border Width="47" Height="80" Padding="0" Background="White" CornerRadius="0" DockPanel.Dock="Top">
+                                <Ellipse Margin="0,3,1,14">
+                                    <Ellipse.Fill>
+                                        <ImageBrush ImageSource="pack://application:,,,/Images/adminIcon.ico"/>
+                                    </Ellipse.Fill>
+                                </Ellipse>
+                            </Border>
+                        </DockPanel>
+                    </Border>
+                    <Button Grid.Row="1" x:Name="btnCancel" ToolTip="{DynamicResource ClearFields}" Command="{Binding CancelCommand}" Style="{DynamicResource topButton}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15,100,0,0" Width="41" Height="41" >
+                        <Icon:PackIconMaterial Kind="Cancel" Width="25" Height="31" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Button>
+                    <Button Grid.Row="1" x:Name="btnDelete"  ToolTip="{DynamicResource DeleteText}" Command="{Binding DeleteFromNavBarCommand}"  Style="{DynamicResource topButton}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15,200,0,0" Width="41" Height="41" >
+                        <Icon:PackIconMaterial Kind="Delete" Width="25" Height="31" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+                    </Button>
+                    <Button Grid.Row="1"  Margin="5,300,0,0" Width="41" Height="41"  Background="Black" BorderBrush="Black">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Grid>
+                                    <Icon:PackIconMaterial Kind="Translate" Foreground="Black" Width="35" Height="35"/>
+                                </Grid>
+                            </ControlTemplate>
+                        </Button.Template>
+                        <Button.ContextMenu>
+                            <ContextMenu>
+                            <MenuItem Header="{DynamicResource English}" Command="{Binding ChangeToEnglishCommand}"/>
+                            <MenuItem Header="{DynamicResource Serbian}" Command="{Binding ChangeToSerbianCommand}"/>
+                            </ContextMenu>
+                        </Button.ContextMenu>
+                    </Button>
+                    <Button Grid.Row="1" Style="{DynamicResource topButton}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15,380,0,0" Width="41" Height="41">
+                        <Icon:PackIconMaterial Kind="ThemeLightDark" Width="23" Height="31" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                        <Button.ContextMenu>
+                            <ContextMenu>
+                            <MenuItem Header="{DynamicResource BlueText}" Command="{Binding LightThemeCommand}"/>
+                            <MenuItem Header="{DynamicResource RedText}" Command="{Binding DarkThemeCommand}"/>
+                            <MenuItem Header="{DynamicResource GreenText}" Command="{Binding GreenThemeCommand}"/>
+                            </ContextMenu>
+                        </Button.ContextMenu>
+                    </Button>
+
+
+                <Button Grid.Row="1" Style="{DynamicResource topButton}"  Command="{Binding LogOutCommand}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15,500,0,0" Width="41" Height="41">
+                        <Icon:PackIconMaterial Kind="Logout" Width="23" Height="31" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                    </Button>
+                </Grid>
+            </Border>
+  -->
+        <Border VerticalAlignment="Stretch"
+        HorizontalAlignment="Stretch"
+        CornerRadius="20"
+        Opacity="0.75"
+        Background="#FFFFFF"
+        BorderThickness="10"
+        Margin="10,10,0,10">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Row="0" Orientation="Vertical" HorizontalAlignment="Left" Margin="15,20,0,20">
+                 <!--   <Button Style="{DynamicResource topButton}" Command="{Binding UndoCommand}" 
+                HorizontalAlignment="Center" ToolTip="Undo" VerticalAlignment="Top"
+                Margin="0,20,0,0" Width="50" Height="40">
+                        <Icon:PackIconMaterial Kind="Undo" Width="25" Height="30"/>
+                    </Button>  -->
+                    <Border Background="AntiqueWhite" Height="59" Margin="0,10,0,10">
+                        <DockPanel>
+                            <Border Width="47" Height="80" Background="White">
+                                <Ellipse Margin="0,3,1,14">
+                                    <Ellipse.Fill>
+                                        <ImageBrush ImageSource="pack://application:,,,/Images/adminIcon.ico"/>
+                                    </Ellipse.Fill>
+                                </Ellipse>
+                            </Border>
+                        </DockPanel>
+                    </Border>
+
+                </StackPanel>
+                <StackPanel Grid.Row="1" Orientation="Vertical" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="15,20,0,20">
+
+                    <Button ToolTip="{DynamicResource ClearFields}" Command="{Binding CancelCommand}"
+                    Style="{DynamicResource topButton}" Width="41" Height="41">
+                        <Icon:PackIconMaterial Kind="Cancel" Width="25" Height="31"/>
+                    </Button>
+
+                    <Button ToolTip="{DynamicResource DeleteText}" Command="{Binding DeleteFromNavBarCommand}"
+                    Style="{DynamicResource topButton}" Width="41" Height="41" Margin="0,5,0,0">
+                        <Icon:PackIconMaterial Kind="Delete" Width="25" Height="31"/>
+                    </Button>
+
+                    <Button Width="41" Height="41" Background="Black" BorderBrush="Black" Margin="0,5,0,0">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Grid>
+                                    <Icon:PackIconMaterial Kind="Translate" Foreground="Black" Width="35" Height="35"/>
+                                </Grid>
+                            </ControlTemplate>
+                        </Button.Template>
+                        <Button.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="{DynamicResource English}" Command="{Binding ChangeToEnglishCommand}"/>
+                                <MenuItem Header="{DynamicResource Serbian}" Command="{Binding ChangeToSerbianCommand}"/>
+                            </ContextMenu>
+                        </Button.ContextMenu>
+                    </Button>
+
+                    <Button Style="{DynamicResource topButton}" Width="41" Height="41" Margin="0,5,0,0">
+                        <Icon:PackIconMaterial Kind="ThemeLightDark" Width="23" Height="31"/>
+                        <Button.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="{DynamicResource BlueText}" Command="{Binding LightThemeCommand}"/>
+                                <MenuItem Header="{DynamicResource RedText}" Command="{Binding DarkThemeCommand}"/>
+                                <MenuItem Header="{DynamicResource GreenText}" Command="{Binding GreenThemeCommand}"/>
+                            </ContextMenu>
+                        </Button.ContextMenu>
+                    </Button>
+                    <Button Command="{Binding LogOutCommand}" Style="{DynamicResource topButton}" Width="41" Height="41" Margin="0,5,0,0">
+                        <Icon:PackIconMaterial Kind="Logout" Width="23" Height="31"/>
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <ScrollViewer Grid.Column="1" VerticalScrollBarVisibility="Auto">
+            <TabControl>
+
+                <TabItem Header="{DynamicResource AddButton}"  Height="85" Margin="0,0,20,0" HeaderTemplate="{DynamicResource CustomTabHeaderTemplate}">
+                    <StackPanel Width="1045" Margin="0,30,0,0">
+                        <TextBlock  Text="{DynamicResource SelectSubProfStudent}" Margin="20,20,0,0" HorizontalAlignment="Left" Style="{DynamicResource DynamicTextHeaderStyle}"/>
+                        <ComboBox SelectedValue="{Binding SelectedEntity, Mode=TwoWay}"  
+                  SelectedValuePath="Tag"  
+                  Width="160"  
+                  Style="{StaticResource ModernComboBoxStyle}"
+                  Margin="20,10,0,0"
+                  HorizontalAlignment="Left" 
+                  IsEditable="False"  
+                  IsReadOnly="True">
+                            <ComboBoxItem Content="{DynamicResource Student}" Tag="{x:Static local:EntityType.Student}" />
+                            <ComboBoxItem Content="{DynamicResource ProfessorText}" Tag="{x:Static local:EntityType.Professor}" />
+                            <ComboBoxItem Content="{DynamicResource SubjectText}" Tag="{x:Static local:EntityType.Subject}" />
+                        </ComboBox>
+
+
+                        <local1:AddStudentView DataContext="{Binding AddStudentVM}"  
+                              Visibility="{Binding DataContext.IsStudentSelectedVisibility,  
+                                                   ElementName=adminRoot}"/>
+
+
+                        <local1:AddProfessorView DataContext="{Binding AddProfessorVM}"  
+                                Visibility="{Binding DataContext.IsProfessorSelectedVisibility,  
+                                                    ElementName=adminRoot}"/>
+
+                        <local1:AddSubjectView DataContext="{Binding AddSubjectVM}"  
+                               Visibility="{Binding DataContext.IsSubjectSelectedVisibility,  
+                                                    ElementName=adminRoot}"/>
+
+                    </StackPanel>
+                </TabItem>
+                <TabItem Header="{DynamicResource DeleteText}" Height="85" Margin="0,0,20,0" HeaderTemplate="{DynamicResource CustomTabHeaderTemplate}" >
+                    <Grid>
+                        <Border Background="AntiqueWhite" BorderThickness="10" BorderBrush="Gray" CornerRadius="50" Padding="30" Margin="100,50,100,50">
+                            <StackPanel Margin="10">
+                                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="5">
+                                    <TextBlock Text="{DynamicResource SelectDeleteEntity}" Style="{DynamicResource DynamicTextBlockStyle}" HorizontalAlignment="Left" Foreground="Black"/>
+                                    <ComboBox SelectedValuePath="Tag"
+          SelectedValue="{Binding SelectedDeleteEntityType, Mode=TwoWay}"
+          Style="{StaticResource ModernComboBoxStyle}"
+          Padding="30,5,5,0"
+          Width="200" Height="29"  HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top">
+                                        <ComboBoxItem Content="{DynamicResource StudentText}" Tag="{x:Static local:EntityType.Student}" />
+                                        <ComboBoxItem Content="{DynamicResource ProfessorText}" Tag="{x:Static local:EntityType.Professor}" />
+                                        <ComboBoxItem Content="{DynamicResource SubjectText}" Tag="{x:Static local:EntityType.Subject}" />
+                                    </ComboBox>
+                                </StackPanel>
+                                <local1:DeleteStudentView
+    Visibility="{Binding DataContext.SelectedDeleteEntityType, RelativeSource={RelativeSource AncestorType=Window}, Converter={StaticResource EntityToVisibilityConverter}, ConverterParameter=Student}"
+    DataContext="{Binding StudentDeleteVM}" />
+                                <local1:DeleteProfessorView
+    Visibility="{Binding DataContext.SelectedDeleteEntityType, RelativeSource={RelativeSource AncestorType=Window}, Converter={StaticResource EntityToVisibilityConverter}, ConverterParameter=Professor}"
+    DataContext="{Binding ProfessorDeleteVM}" />
+                                <local1:DeleteSubjectView
+    Visibility="{Binding DataContext.SelectedDeleteEntityType, RelativeSource={RelativeSource AncestorType=Window}, Converter={StaticResource EntityToVisibilityConverter}, ConverterParameter=Subject}"
+    DataContext="{Binding SubjectDeleteVM}" />
+                            </StackPanel>
+                        </Border>
+                    </Grid>
+                </TabItem>
+                <TabItem Header="{DynamicResource UpdateButton}" Margin="0,0,20,0" Foreground="Black" Height="85" HeaderTemplate="{DynamicResource CustomTabHeaderTemplate}">
+                    <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                        <Grid Margin="0,10,0,0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+
+                            <Grid Grid.Row="0" Margin="10,20,0,10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Grid Grid.Column="0"
+      Margin="20"
+      HorizontalAlignment="Stretch"
+      VerticalAlignment="Top">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+
+                                    <TextBlock Grid.Row="0"
+               Text="{DynamicResource SelectTypeEntity}" 
+               Style="{DynamicResource DynamicTextHeaderStyle}"  
+               FontWeight="Bold"
+               Margin="0,10,30,5"
+               HorizontalAlignment="Center"/>
+                                    <ComboBox Grid.Row="1"
+          SelectedValue="{Binding SelectedUpdateEntityType, Mode=TwoWay}"
+          SelectedValuePath="Tag"
+          Style="{StaticResource ModernComboBoxStyle}"
+          MinWidth="150"
+          MaxWidth="200"
+          Margin="10,0,0,0"
+          HorizontalAlignment="Stretch"
+          Padding="10,5,5,0">
+                                        <ComboBoxItem Content="{DynamicResource Student}" Tag="{x:Static local:EntityType.Student}" />
+                                        <ComboBoxItem Content="{DynamicResource ProfessorText}" Tag="{x:Static local:EntityType.Professor}" />
+                                        <ComboBoxItem Content="{DynamicResource SubjectText}" Tag="{x:Static local:EntityType.Subject}" />
+                                    </ComboBox>
+
+
+                                </Grid>
+
+
+                                <StackPanel Grid.Column="1">
+                                    <TextBlock Text="{DynamicResource SelectTypeEntity}" 
+                               Style="{DynamicResource DynamicTextHeaderStyle}" 
+                               FontWeight="Bold" Margin="0,30,0,5"/>
+                                    <ComboBox ItemsSource="{Binding UpdateItems}"
+                              SelectedItem="{Binding SelectedUpdateItem, Mode=TwoWay}" 
+                              IsEnabled="{Binding IsUpdateComboEnabled}"
+                              Width="250" Height="32" Padding="7" HorizontalAlignment="Left"
+                              Background="#E0E0E0" BorderBrush="Gray" BorderThickness="2">
+                                        <ComboBox.ItemTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="{Binding DisplayText}" />
+                                            </DataTemplate>
+                                        </ComboBox.ItemTemplate>
+                                    </ComboBox>
+                                </StackPanel>
+                            </Grid>
+
+                            <ContentControl Grid.Row="2"
+                            Content="{Binding SelectedUpdateViewModel}"
+                            ContentTemplateSelector="{StaticResource UpdateTemplateSelector}"
+                            Margin="0,20,0,0"/>
+                        </Grid>
+                    </ScrollViewer>
+                </TabItem>
+
+                <TabItem Header="{DynamicResource ManageAssignmentText}" Height="85" Margin="0,0,20,0" HeaderTemplate="{DynamicResource CustomTabHeaderTemplate}">
+                    <Grid Margin="5">
+                        <TabControl>
+                            <TabItem Header="{DynamicResource AssignText}" Height="83.5" HeaderTemplate="{DynamicResource CustomTabHeaderTemplate}" Width="350">
+                                <local1:AssignProfessorToSubject DataContext="{Binding AssignVM}" />
+                            </TabItem>
+                            <TabItem Header="{DynamicResource UnassignCourse}" Height="83.5" HeaderTemplate="{DynamicResource CustomTabHeaderTemplate}" Width="350">
+                                <local1:UnassignProfessorFromSubjectView DataContext="{Binding UnassignVM}" />
+                            </TabItem>
+                        </TabControl>
+                    </Grid>
+                </TabItem>
+
+            </TabControl>
+        </ScrollViewer>
+    </Grid>
+
+</Window>
