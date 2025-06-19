@@ -1,4 +1,4 @@
-<h1 align="center">HCI_Projects</h1>
+<h1 align="center">Interakcija čovjek računar</h1>
 
 <h3 align="center">Sistem za praćenje nastavnih aktivnosti</h3>
 
