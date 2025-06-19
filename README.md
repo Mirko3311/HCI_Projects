@@ -456,6 +456,7 @@ U tabu **Pregled Prisustva**, student može pregledati evidenciju svojih prisust
   <img src="Screenshot/StudentTask.png" alt="Domaci zadatak" width="800">
 </div>
 - Klikom na zadatak student može da vidi detaljnije informacije o zadatku.
+
 <div align="center">
   <img src="Screenshot/PreviewTaskStudent.png" alt="Domaci zadatak" width="800">
 </div>
@@ -479,4 +480,6 @@ U tabu **Pregled Prisustva**, student može pregledati evidenciju svojih prisust
 
 
 Na samom dnu MenuBar-a je ikonica za **LogOut**. Kada korisnik dvoklikne na tu ikonicu odjaviće se se ili prečicom CTR+L.
+
+U cijeloj aplikaiciji ukoliko je lista prazna, ukoliko je unos nepotpun, netačan, ukoliko unijeta vrijednost ne odgovara pretpostavljenoj vrijednosti korisnik će biti obaviješten porukama u formi iskačućih prozora.
 
