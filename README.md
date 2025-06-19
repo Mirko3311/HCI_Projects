@@ -185,10 +185,11 @@ Nakon toga, prikazuje se okruženje za ažuriranje.
 
 Postoje dva ComBox. U prvom ComBox-u  se bira koji entitet želi da ažurira.
 
-![Combox Entity](Screenshot/ComboxEntity.JPG)
+![Combox Entity](Screenshot/ComboxEntity.png)
 
  Nakon što izabere entitet koji želi da ažurira, prikazuje se forma sa poljima za ažuriranje.
 Ovo je forma za ažuriranja Profesora:
+
 ![Update Form](Screenshot/UpdateProfessor.png)
 
 Ovo je forma za ažuriranje Studenta:
@@ -202,7 +203,7 @@ Ovo je forma za ažuriranje Predmeta:
  Administrator treba da izabere konkretan entitet koji želi da ažurira. Nakon što selektuje entitet kojeg želi da ažurira, popunjava se forma za ažuriranje podacima 
 izabranog entiteta.
 
-![Update Entity](Screenshot/UpdateConcreteProfessor.JPG)
+![Update Entity](Screenshot/UpdateConcreteEntity.png)
 
 U formi se podaci mogu izmijeniti. Svi podaci se mogu izmijeniti. Kada se pritisne na dugme "Ažuriraj", podaci se ažuriraju.
 
