@@ -374,7 +374,7 @@ Funkcionalnost unosa ocjena dostupna je u tabu **"Ocjene"** i realizuje se na sl
 
 
 <div align="center">
-  <img src="Screenshot/EmptyFieldGrade.png" alt="Nevalidan unos podataka" width="500">
+  <img src="Screenshot/FillField.png" alt="Nevalidan unos podataka" width="500">
 </div>
 
 
@@ -384,7 +384,7 @@ Funkcionalnost unosa ocjena dostupna je u tabu **"Ocjene"** i realizuje se na sl
 
 
 <div align="center">
-  <img src="Screenshot/GradeAdd.jpg" alt="Sacuvaj unos podataka " width="500">
+  <img src="Screenshot/SuccessAddGrade.png" alt="Sacuvaj unos podataka " width="500">
 </div>
 
 
