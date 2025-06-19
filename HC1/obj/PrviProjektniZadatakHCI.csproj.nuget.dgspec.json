@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Korisnik\\Desktop\\HCI\\HC1\\PrviProjektniZadatakHCI.csproj": {}
+    "C:\\Users\\Korisnik\\Source\\Repos\\HCI_Projects\\HC1\\PrviProjektniZadatakHCI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Korisnik\\Desktop\\HCI\\HC1\\PrviProjektniZadatakHCI.csproj": {
+    "C:\\Users\\Korisnik\\Source\\Repos\\HCI_Projects\\HC1\\PrviProjektniZadatakHCI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Korisnik\\Desktop\\HCI\\HC1\\PrviProjektniZadatakHCI.csproj",
+        "projectUniqueName": "C:\\Users\\Korisnik\\Source\\Repos\\HCI_Projects\\HC1\\PrviProjektniZadatakHCI.csproj",
         "projectName": "PrviProjektniZadatakHCI",
-        "projectPath": "C:\\Users\\Korisnik\\Desktop\\HCI\\HC1\\PrviProjektniZadatakHCI.csproj",
+        "projectPath": "C:\\Users\\Korisnik\\Source\\Repos\\HCI_Projects\\HC1\\PrviProjektniZadatakHCI.csproj",
         "packagesPath": "C:\\Users\\Korisnik\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Korisnik\\Desktop\\HCI\\HC1\\obj\\",
+        "outputPath": "C:\\Users\\Korisnik\\Source\\Repos\\HCI_Projects\\HC1\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
