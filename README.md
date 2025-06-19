@@ -138,13 +138,13 @@ Kada se administrator unosom kredencijala prijavi, otvara se administratorski pr
 
  Administrator ukoliko želi da doda ili studenta ili profesora ili predmet, mora da izabere karticu **"Dodaj" **. Kada izabere karticu dodaj, može da bira koji entitet želi da doda. Ukoliko želi da doda profesora, treba da izabere **Profesor**, studenta **Student**, predmet **Predmet**. 
 <p align="center">
-  <img src="Screenshot/AddEntity.JPG" alt="Izbor entiteta za dodavanje" />
+  <img src="Screenshot/ComboxEntity.png" alt="Izbor entiteta za dodavanje" />
 </p>
 
 U zavisnosti od izabranog entiteta, otvara se forma za unos podataka. Ako administrator selektuje **Profesor**, dobija formu za kreiranje naloga za profesora. Pretpostavlja se da administrator zna osnovne podatke profesora, pa ih unosi, ali  kreira i kredencijale koje će profesor kasnije koristiti za logovanje.
 
 <p align="center">
-  <img src="Screenshot/AddProfessor.JPG" alt="Forma za dodavanje profesora" />
+  <img src="Screenshot/AdminPage.png" alt="Forma za dodavanje profesora" />
 </p>
 
  Prilikom unosa, ukoliko želi da prekine unos i izbriše sve unijeti podatke u polja može da pritisne dugme za **"Cancel"**, te na taj način da očite polja.
@@ -169,27 +169,35 @@ Ukoliko administrator želi da obriše entitet kao što su student, profesor ili
 Nakon što administrator izabere odgovarajući entitet, na ekranu će se prikazati svi entiteti tog tipa. Administrator zatim može selektovati specifičan entitet koji želi da obriše, a potom u MenuBar-u pritisnuti ikonu za "Brisanje".
 
 <p align="center">
- <img src="Screenshot/DeleteEntity.JPG" alt="Brisanje entiteta">
+ <img src="Screenshot/DeletePage.png" alt="Brisanje entiteta">
 </p>
 
-Na primer, ako administrator izabere "Profesor", prikazaće se lista svih profesora. Administrator može da selektuje profesora kojeg želi da obriše, nakon čega treba da pritisne ikonu "Delete".
+Na primer, ako administrator izabere "Profesor", prikazaće se lista svih profesora. Administrator može da selektuje profesora kojeg želi da obriše, nakon čega treba da pritisne ikonu "Delete". Nakon toga će iskočiti Confirm prozor, ako korisnik želi zaista da obriše treba da pritisne dugme za potvrdu.
 
-![Select Entity for Delete](Screenshot/DeletePage.png)
+![Select Entity for Delete](Screenshot/ConfirmDelete.png)
 
 ### Ažuriranje
 
 Ukoliko administrator želi da ažurira neki entitet (studenta, profesora, predmet), mora da izabere tab za **"Ažuriranje"**.
 Nakon toga, prikazuje se okruženje za ažuriranje.
 
-![Update Item](Screenshot/Update.JPG)
+![Update Item](Screenshot/UpdateProfessor.png)
 
 Postoje dva ComBox. U prvom ComBox-u  se bira koji entitet želi da ažurira.
 
 ![Combox Entity](Screenshot/ComboxEntity.JPG)
 
  Nakon što izabere entitet koji želi da ažurira, prikazuje se forma sa poljima za ažuriranje.
-
+Ovo je forma za ažuriranja Profesora:
 ![Update Form](Screenshot/UpdateProfessor.png)
+
+Ovo je forma za ažuriranje Studenta:
+
+![Update Form](Screenshot/UpdateStudent.png)
+
+Ovo je forma za ažuriranje Predmeta:
+
+![Update Form](Screenshot/UpdateSubject.png)
 
  Administrator treba da izabere konkretan entitet koji želi da ažurira. Nakon što selektuje entitet kojeg želi da ažurira, popunjava se forma za ažuriranje podacima 
 izabranog entiteta.
@@ -198,7 +206,7 @@ izabranog entiteta.
 
 U formi se podaci mogu izmijeniti. Svi podaci se mogu izmijeniti. Kada se pritisne na dugme "Ažuriraj", podaci se ažuriraju.
 
-![Update Entity](Screenshot/MessageProfessor.JPG)
+![Update Entity](Screenshot/SuccessUpdate.png)
 
 ### Upravljanje Dodjelama
 
@@ -212,7 +220,7 @@ Kartica **"Dodijeli kurs"** omogućava administratoru da dodijeli predmet profes
 
 Nakon što administrator odabere odgovarajuće opcije, klikom na dugme **"Dodijeli kurs"**, profesor se zadužuje za predmet.
 
-![Zaduzi profesora na kurs](Screenshot/AssignProfessor.JPG)
+![Zaduzi profesora na kurs](Screenshot/AssignProfessor.png)
 
 #### Razduži
 
@@ -268,7 +276,7 @@ Profesor u tabu **Domaći zadaci** ima dva podtaba, jedan za dodavanje novog dom
 Profesor popunjava sva neophodna polja za domaći zadatak. Sva polja moraju da budu popunjena. Sva polja podržavaju stringove, osim polja **Maksimalan broj bodova**, koji podržava cjelobrojne vrijednosti.
 Ukoliko sva polja nisu popunjena, korisnik će dobiti povratnu informaciju.
 
-![Prazna polja](Screenshot/EmptyFieldPTask.JPG)
+![Prazna polja](Screenshot/EmptyFieldPTask.png)
 
 Profesor može da doda domaći zadatak samo predmetima koje predaje. Isto tako, samo studenti koji slušaju predmete mogu da pregledaju domaće zadatke. 
 Kada se ** popune sva polja **, profesor pritiskom na dugme **"Dodaj"** pamti domaći zadatak. 
@@ -280,6 +288,10 @@ Kada se ** popune sva polja **, profesor pritiskom na dugme **"Dodaj"** pamti do
 U ovom tabu profesor može da pregleda sve domaće zadatke, iz svih predmeta koje predaje. Može da pregleda osnove informacije o svakom domaćem zadatku.
 
 ![Pregled domaćeg zadatka](Screenshot/HomeworkAdd.JPG)
+
+Kada klikne na konkretan zadatak otvara se posebna forma za detaljan prikaz informacija o zadatku, on može da ažurira ta polja.
+
+![Pregled domaćeg zadatka](Screenshot/DetailPreviewTaskStudent.png)
 
 
 ### Prisustvo
@@ -404,7 +416,7 @@ Pregled ocjena omogućava profesoru da na jednostavan način pristupi ocjenama s
 - **Tabela**: Prikazuje ime i prezime studenta, ocjenu i datum ispita.
 
 
-![PregledOcjena](Screenshot/GradeReview.JPG)
+![PregledOcjena](Screenshot/PreviewGradeProfessor.png)
 
 **Napomena**: Ova funkcionalnost omogućava profesorima da brzo i efikasno pregledaju ocjene svojih studenata za specifične predmete. Sve promjene u selektovanim studentima i predmetima odmah se odražavaju u tabeli, pružajući tako interaktivan i pregledan način za praćenje ocjena.
 
