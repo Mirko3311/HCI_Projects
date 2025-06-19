@@ -210,15 +210,15 @@ U formi se podaci mogu izmijeniti. Svi podaci se mogu izmijeniti. Kada se pritis
 
 ### Upravljanje Dodjelama
 
-Funkcionalnost za **Upravljanje dodjelama** uključuje dvije kartice: **"Dodijeli kurs"** i **"Razduži"**.
+Funkcionalnost za **Upravljanje dodjelama** uključuje dvije kartice: **"Zaduži profesora"** i **"Razduži profesora"**.
 
-#### Dodijeli Kurs
+#### Zaduži profesora
 
-Kartica **"Dodijeli kurs"** omogućava administratoru da dodijeli predmet profesoru. Ova kartica sadrži dva **ComBox**-a:
+Kartica **"Zaduži profesora"** omogućava administratoru da dodijeli predmet profesoru. Ova kartica sadrži dva **ComBox**-a:
 1. **Prvi ComBox** omogućava odabir profesora kojem će biti dodijeljen predmet.
 2. **Drugi ComBox** omogućava odabir predmeta koji će biti dodijeljen izabranom profesoru.
 
-Nakon što administrator odabere odgovarajuće opcije, klikom na dugme **"Dodijeli kurs"**, profesor se zadužuje za predmet.
+Nakon što administrator odabere odgovarajuće opcije, klikom na dugme **"Zaduži"**, profesor se zadužuje za predmet. Ukoliko admin nije selektovao profesora i predmet koji mu se dodijeljuje, onda neće moći kliknuti da dugme "Zaduži".
 
 ![Zaduzi profesora na kurs](Screenshot/AssignProfessor.png)
 
