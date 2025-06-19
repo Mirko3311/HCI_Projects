@@ -262,11 +262,11 @@ Kada se profesor uspješno prijavi, otvara mu se prozor, tako da u vrhu postoje 
 
 U tabu **"Predmeti"** prikazani su predmeti koje profesor predaje. Kada selektuje neki predmet i dugme "Student",prikazuju  se studenti koji slušaju predmet.
 
-![Profesori](Screenshot/Professor2.JPG)
+![Profesori](Screenshot/ProfessorCourse.png)
 
 Studenti koji slušaju predmet se prikazuju u posebnom prozoru.
 
-![Studenti slusaju predmete](Screenshot/SubjectStudents.JPG)
+![Studenti slusaju predmete](Screenshot/StudentsOnCourse.png)
 
 ### Domaći zadaci
 
@@ -282,13 +282,13 @@ Ukoliko sva polja nisu popunjena, korisnik će dobiti povratnu informaciju.
 Profesor može da doda domaći zadatak samo predmetima koje predaje. Isto tako, samo studenti koji slušaju predmete mogu da pregledaju domaće zadatke. 
 Kada se ** popune sva polja **, profesor pritiskom na dugme **"Dodaj"** pamti domaći zadatak. 
 
-![Dodavanje domaćeg zadatka](Screenshot/HomeworkAdd.JPG)
+![Dodavanje domaćeg zadatka](Screenshot/AddTask.png)
 
 #### Pregled zadataka
 
 U ovom tabu profesor može da pregleda sve domaće zadatke, iz svih predmeta koje predaje. Može da pregleda osnove informacije o svakom domaćem zadatku.
 
-![Pregled domaćeg zadatka](Screenshot/HomeworkAdd.JPG)
+![Pregled domaćeg zadatka](Screenshot/PreviewTaskProfessor.png)
 
 Kada klikne na konkretan zadatak otvara se posebna forma za detaljan prikaz informacija o zadatku, on može da ažurira ta polja.
 
