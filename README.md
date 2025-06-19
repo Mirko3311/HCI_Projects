@@ -1,6 +1,6 @@
-# HCI_Projects
+<h1 align="center">HCI_Projects</h1>
 
-﻿# Sistem za praćenje studentskih aktivnosti
+<h3 align="center">Sistem za praćenje nastavnih aktivnosti</h3>
 
 
 
