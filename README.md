@@ -125,7 +125,6 @@ Kada se administrator unosom kredencijala prijavi, otvara se administratorski pr
    - Može da profesore zadužuje/razdužuje na predmetima
 
 2. **MenuBar sa dodatnim opcijama:**
-   - **Undo:** Poništava prethodnu akciju.
    - **Cancel dugme:** Omogućava čišćenje svih unesenih podataka u aplikaciji.
    - **Delete ikonica:** Koristi se za brisanje studenata iz sistema.
    - **Ikonica za promjenu pozadine:** Omogućava promjenu vizuelnog izgleda aplikacije.
