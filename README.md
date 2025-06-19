@@ -98,7 +98,6 @@ Svaki korisnik moze da promijeni temu, tako što se u MenuBar, sa lijeve strane,
 ![Change Theme](Screenshot/ChangeBackground.png)
 
 Otvori će se meni sa temama, tako da korisnik može da izabere između plave, crvene ili zelene teme. Kod svih korisnika kada izaberu temu pamtiće se izbor tema, tako da prilikom sljedeće prijave aplikacija se pokreće sa posljednjim sačuvanim  izborom teme.
-Kod administratora podrazumijevana tema je plava.
 Teme se razlikuju po pozadini, fontu slova, boji slova, dizajnu dugmadi.
 Primjer izgleda dvije teme za interfejs profesora (crvene i zelene), dok će se treća tema (plava) koristiti u ovom dokumentu.
 
