@@ -443,7 +443,7 @@ U tabu **Pregled Prisustva**, student može pregledati evidenciju svojih prisust
   - **Informacija** o tome da li je student prisustvovao tim predavanjima.
 
 <div align="center">
-  <img src="Screenshot/PreviewAttendanceStudent.png" alt="Studentski pregled prisustva" width="800">
+  <img src="Screenshot/PreviewAttendaceStudent.png" alt="Studentski pregled prisustva" width="800">
 </div>
 
 ####  Domaći zadaci
