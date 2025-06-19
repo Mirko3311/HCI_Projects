@@ -479,7 +479,7 @@ U tabu **Pregled Prisustva**, student može pregledati evidenciju svojih prisust
 ### Opcija  Logout
 
 
-Na samom dnu MenuBar-a je ikonica za **LogOut**. Kada korisnik dvoklikne na tu ikonicu odjaviće se se ili prečicom CTR+L.
+Na samom dnu MenuBar-a je ikonica za **LogOut**. Kada korisnik dvoklikne na tu ikonicu odjaviće se ili prečicom CTR+L.
 
 U cijeloj aplikaiciji ukoliko je lista prazna, ukoliko je unos nepotpun, netačan, ukoliko unijeta vrijednost ne odgovara pretpostavljenoj vrijednosti korisnik će biti obaviješten porukama u formi iskačućih prozora.
 
