@@ -1,0 +1,25 @@
+Superadministrator 
+  
+	 Dodavanje i brisanje profesora: Superadministrator može dodavati nove profesore sa osnovnim podacima i dodijeljivati im predmete, brisati profesore, ažurirati podatke.                  
+  	 Dodavanje i brisanje studenata: Superadministrator može dodavati nove studente, unositi njihove osnovne podatke, brisati studente, ažurirati njihove podatke                          
+ 	 Kreiranje i ažuriranje predmeta: Superadministrator može kreirati nove predmete sa osnovnim informacijama i dodjeljivati ih profesorima, ažurirati i brisati predmete.
+         Dodjela prava pristupa: Superadministrator dodjeljuje profesorima administratorska prava za predmete koje predaju, čime ograničava njihov pristup na relevantne podatke. 					Administrator može da razduži profesora sa predmeta.
+
+Profesor  
+        Profesor ima uvid u predmete koje predaje, može da pregleda studente koji slušaju predmet.
+	Dodavanje zadataka: Profesor može dodati  zadatke za svoje predmete, uključujući rokove i maksimalne bodove, može pregledati zadatke, obrisati, ažurirati.     
+	Vođenje evidencije o prisustvu: Profesor može unijeti prisustvo za svakog studenta na predmetu. Može da pregleda prisustvo za predmete koje predaje.                                      
+        Unos i pregled ocjena: Profesor može dodavati ocjene za ispite za studente na svojim predmetima. Može da pregleda sve ocjene studenata na predmetima koje predaje za studente koje 			slušaju  predmete.                                                             		
+          
+Student      
+	   Pregled prisustva: Student može pregledati svoje prisustvo po predmetu, uz detalje o svakom času.      
+           Pregled domaćih zadataka i ispita: Student može pregledati domaće zadatke za svaki predmet koji sluša.     
+   	   Pregled ukupnog uspjeha: Student može vidjeti svoj ukupan uspjeh po predmetu kroz zbir bodova i ocjena koje je dobio.                                                  
+
+Svi korisnici	
+
+	Internacionalizacija: Sistem omogućava korisnicima da biraju između više jezika.                                                          
+         Podešavanje tema: Korisnici mogu birati između svjetle i tamne teme, koja se automatski čuva za svakog korisnika.                                       
+
+
+Github:  https://github.com/Mirko3311/HCI_Projects

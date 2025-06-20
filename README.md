@@ -74,7 +74,7 @@ Aplikacija omogućava korisnicima da na početnom ekranu odaberu željeni jezik 
      - **🇷🇸 Srpska zastava** za srpski jezik.
      - **🇬🇧/🇺🇸 Britanska/Američka zastava** za engleski jezik.
 
-2. **Radnje korisnika:**
+2. **Radnje korisnika
    - **Klikom na dugme sa srpskom zastavom (🇷🇸):**
      - Aplikacija prelazi na **srpski jezik**.
      - Sve komande, tekstovi i opcije u aplikaciji prikazuju se na srpskom jeziku.
@@ -94,6 +94,8 @@ Dugmad za izbor jezika nalaze se u **donjem desnom uglu početnog ekrana**, omog
 
 Kada se korisnik uspješno prijavi, otvoriće mu se odgovarajući prozor, u zavisnosti tipa korisnika. Prijavljeni korisnik će sa lijeve strane imati MenuBar.
 Svaki korisnik moze da promijeni temu, tako što se u MenuBar, sa lijeve strane, desnim klikom pritisne na ikonicu za promijenu teme.
+Izabrana tema će se čuvati, tako da kada se korisnik sljedeći put uloguje logovaće se sa posljednjom izabranom temom.
+
 
 ![Change Theme](Screenshot/ChangeBackground.png)
 
@@ -101,7 +103,8 @@ Otvori će se meni sa temama, tako da korisnik može da izabere između plave, c
 Teme se razlikuju po pozadini, fontu slova, boji slova, dizajnu dugmadi.
 Primjer izgleda dvije teme za interfejs profesora (crvene i zelene), dok će se treća tema (plava) koristiti u ovom dokumentu.
 
-<div style="display: flex; justify-content: space-between;">
+
+<div style="display: flex; justify-content: space-between;  page-break-inside: avoid;">
   <img src="Screenshot/GreenTheme.png" alt="Tema 1" width="520"/>
   <img src="Screenshot/RedTheme.png" alt="Tema 2" width="520"/>
 </div>
