@@ -96,7 +96,7 @@
                     <StackPanel Margin="0 30" HorizontalAlignment="Center">
                         <Button Width="120" Height="50" BorderBrush="#3498DB" BorderThickness="2" 
                                 Background="#3498DB" Foreground="White" Margin="20" ToolTip="Login" 
-                                x:Name="btnLogin" Click="btnLogin_Click" 
+                                x:Name="btnLogin" Click="btnLogin_Click" IsDefault="True"
                                 Content="{DynamicResource LogInButton}" 
                                 FontWeight="Bold" materialDesign:ButtonAssist.CornerRadius="8" />
                     </StackPanel>
@@ -106,10 +106,10 @@
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="20">
 
             <Button Click="ChangeLanguageToEnglish" Width="100" Height="100" BorderBrush="Transparent" Background="Transparent" ToolTip="Switch to English">
-                <Image Source="Images/EnglishIcon.png" Width="70" Height="64" />
+                <Image Source="../Images/EnglishIcon.png" Width="70" Height="64" />
             </Button>
             <Button Click="ChangeLanguageToSerbian" Width="100" Height="100" BorderBrush="Transparent" Background="Transparent" ToolTip="Switch to Serbian">
-                <Image Source="Images/SerbianIcon.png" Width="72" Height="60" />
+                <Image Source="../Images/SerbianIcon.png" Width="72" Height="60" />
             </Button>
         </StackPanel>
     </Grid>

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "MhAAlb8327w=",
+  "dgSpecHash": "mXdE1xyy8p0=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Korisnik\\Desktop\\HCI\\HC1\\PrviProjektniZadatakHCI.csproj",
+  "projectFilePath": "C:\\Users\\Korisnik\\Source\\Repos\\HCI_Projects\\HC1\\PrviProjektniZadatakHCI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Korisnik\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\Korisnik\\.nuget\\packages\\bouncycastle.cryptography\\2.3.1\\bouncycastle.cryptography.2.3.1.nupkg.sha512",
@@ -187,9 +187,9 @@
       "code": "NU1701",
       "level": "Warning",
       "message": "Package 'MvvmLightLibs 5.4.1.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0-windows7.0'. This package may not be fully compatible with your project.",
-      "projectPath": "C:\\Users\\Korisnik\\Desktop\\HCI\\HC1\\PrviProjektniZadatakHCI.csproj",
+      "projectPath": "C:\\Users\\Korisnik\\Source\\Repos\\HCI_Projects\\HC1\\PrviProjektniZadatakHCI.csproj",
       "warningLevel": 1,
-      "filePath": "C:\\Users\\Korisnik\\Desktop\\HCI\\HC1\\PrviProjektniZadatakHCI.csproj",
+      "filePath": "C:\\Users\\Korisnik\\Source\\Repos\\HCI_Projects\\HC1\\PrviProjektniZadatakHCI.csproj",
       "libraryId": "MvvmLightLibs",
       "targetGraphs": [
         "net8.0-windows7.0"

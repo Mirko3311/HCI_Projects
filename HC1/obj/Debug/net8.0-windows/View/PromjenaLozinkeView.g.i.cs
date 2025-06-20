@@ -82,7 +82,7 @@ namespace PrviProjektniZadatakHCI.View {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/PrviProjektniZadatakHCI;V1.0.0.0;component/view/promjenalozinkeview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/PrviProjektniZadatakHCI;component/view/promjenalozinkeview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\View\PromjenaLozinkeView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
