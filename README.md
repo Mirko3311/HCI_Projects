@@ -333,10 +333,10 @@ Evidencija prisustva obavlja se kroz sledeće korake:
 Funkcionalnost **Pregleda prisustva** omogućava profesorima ili administratorima da prate informacije o prisustvu studenata na odabranim predmetima. Proces pregleda prisustva se odvija na sljedeći način:
 
 1. **Izbor studenta**  
-   - U lijevom **ComBox-u** pod nazivom **"Student"**, potrebno je odabrati studenta za kojeg se želi pregledati prisustvo.  
+   - U desnom **ComBox-u** pod nazivom **"Student"**, potrebno je odabrati studenta za kojeg se želi pregledati prisustvo.  
    
 2. **Izbor predmeta**  
-   - U desnom **ComBox-u** pod nazivom **"Predmeti"**, bira se predmet na kojem se traži prisustvo odabranog studenta.  
+   - U lijevom **ComBox-u** pod nazivom **"Predmeti"**, bira se predmet na kojem se traži prisustvo odabranog studenta.  
 
 3. **Prikaz informacija o prisustvu**  
    - Nakon selekcije studenta i predmeta, tabela ispod se popunjava informacijama o prisustvu studenta za taj predmet.  
